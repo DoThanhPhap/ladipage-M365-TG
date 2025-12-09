@@ -12,10 +12,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Security settings from environment
 SECRET_KEY = config('SECRET_KEY', default='dev-secret-key-change-in-production')
 DEBUG = config('DEBUG', default=False, cast=bool)
-ALLOWED_HOSTS = config('ALLOWED_HOSTS', default='.railway.app,.vercel.app,localhost,127.0.0.1').split(',')
+ALLOWED_HOSTS = config('ALLOWED_HOSTS', default='.up.railway.app,.railway.app,.vercel.app,localhost,127.0.0.1').split(',')
 
 # CSRF trusted origins for Railway
-CSRF_TRUSTED_ORIGINS = config('CSRF_TRUSTED_ORIGINS', default='https://*.railway.app,https://*.vercel.app').split(',')
+CSRF_TRUSTED_ORIGINS = config('CSRF_TRUSTED_ORIGINS', default='https://*.up.railway.app,https://*.railway.app,https://*.vercel.app').split(',')
 
 # Application definition - minimal for landing page
 INSTALLED_APPS = [
