@@ -3,252 +3,361 @@
 
 {% block content %}
 
-<!-- HERO SECTION -->
-<section id="hero" class="relative text-white py-20 md:py-32 overflow-hidden">
-    <!-- Background Image -->
-    <div class="absolute inset-0 z-0">
-        <img src="{% static 'images/hero-bg.jpg' %}" alt="" class="w-full h-full object-cover">
-        <div class="absolute inset-0 bg-gradient-to-br from-primary/90 to-blue-900/90"></div>
+<!-- HERO SECTION - Dark with gradient -->
+<section id="hero" class="relative min-h-screen flex items-center overflow-hidden">
+    <!-- Animated Background -->
+    <div class="absolute inset-0 bg-gradient-to-br from-gray-900 via-black to-gray-900">
+        <!-- Gradient Overlay -->
+        <div class="absolute inset-0 bg-gradient-to-r from-primary/20 via-transparent to-primary/10"></div>
+        <!-- Animated Particles -->
+        <div class="absolute inset-0 opacity-30">
+            <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/30 rounded-full filter blur-3xl animate-pulse"></div>
+            <div class="absolute bottom-1/4 right-1/4 w-80 h-80 bg-red-800/20 rounded-full filter blur-3xl animate-pulse" style="animation-delay: 1s;"></div>
+        </div>
+        <!-- Grid Pattern -->
+        <div class="absolute inset-0 opacity-5" style="background-image: linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px); background-size: 50px 50px;"></div>
     </div>
 
-    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <!-- Text Content -->
             <div class="text-center lg:text-left" data-animate>
-                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
-                    Giải pháp toàn diện cho doanh nghiệp
+                <div class="inline-block mb-6">
+                    <span class="text-primary font-medium tracking-widest uppercase text-sm border border-primary/30 px-4 py-2 rounded-full bg-primary/10">
+                        Giải pháp doanh nghiệp
+                    </span>
+                </div>
+                <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-8 text-white">
+                    Giải pháp
+                    <span class="block bg-gradient-to-r from-primary via-red-500 to-primary bg-clip-text text-transparent">
+                        toàn diện
+                    </span>
+                    cho doanh nghiệp
                 </h1>
-                <p class="text-xl md:text-2xl text-blue-100 mb-8">
-                    Tự Động Hoá Trương Gia - Đồng hành cùng doanh nghiệp Việt Nam trong chuyển đổi số
+                <p class="text-xl md:text-2xl text-gray-400 mb-10 leading-relaxed max-w-xl">
+                    Đồng hành cùng doanh nghiệp Việt Nam trong hành trình chuyển đổi số
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                    <a href="#contact" class="btn-primary bg-accent hover:bg-orange-500 text-white px-8 py-4 rounded-lg font-semibold text-lg transition transform hover:scale-105">
-                        Liên hệ tư vấn
+                    <a href="#contact" class="group relative overflow-hidden bg-gradient-to-r from-primary to-primary-dark text-white px-10 py-4 rounded-full font-semibold text-lg transition-all duration-300 hover:shadow-2xl hover:shadow-primary/40 hover:-translate-y-1">
+                        <span class="relative z-10">Liên hệ tư vấn</span>
+                        <div class="absolute inset-0 bg-gradient-to-r from-red-500 to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     </a>
-                    <a href="tel:0989222800" class="bg-white/10 hover:bg-white/20 text-white px-8 py-4 rounded-lg font-semibold text-lg transition border border-white/30">
+                    <a href="tel:0989222800" class="group border-2 border-white/20 hover:border-primary/50 text-white px-10 py-4 rounded-full font-semibold text-lg transition-all duration-300 hover:bg-white/5 flex items-center justify-center gap-3">
+                        <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+                        </svg>
                         0989 222 800
                     </a>
                 </div>
             </div>
             <!-- Hero Visual -->
             <div class="hidden lg:flex justify-center" data-animate>
-                <div class="bg-white/10 rounded-2xl p-8 backdrop-blur-sm">
-                    <img src="{% static 'images/logo.ico' %}" alt="Trương Gia" class="w-48 h-48 mx-auto">
+                <div class="relative">
+                    <!-- Glow Effect -->
+                    <div class="absolute inset-0 bg-gradient-to-r from-primary/40 to-red-800/40 rounded-3xl filter blur-3xl scale-110"></div>
+                    <!-- Logo Card -->
+                    <div class="relative bg-gradient-to-br from-gray-900/80 to-black/80 backdrop-blur-xl rounded-3xl p-12 border border-white/10 shadow-2xl">
+                        <img src="{% static 'images/logo.ico' %}" alt="Logo" class="w-56 h-56 mx-auto drop-shadow-2xl">
+                        <div class="mt-6 text-center">
+                            <p class="text-gray-400 font-medium tracking-wider uppercase text-sm">Tự Động Hoá</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+
+    <!-- Scroll Indicator -->
+    <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+        <svg class="w-6 h-6 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+        </svg>
+    </div>
 </section>
 
-<!-- SOLUTIONS SECTION -->
-<section id="solutions" class="py-20 bg-white">
+<!-- SOLUTIONS SECTION - Light background -->
+<section id="solutions" class="py-24 bg-gray-50 relative overflow-hidden">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-16" data-animate>
-            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                Giải pháp của chúng tôi
+        <div class="text-center mb-20" data-animate>
+            <span class="text-primary font-medium tracking-widest uppercase text-sm">Dịch vụ</span>
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mt-4 mb-6">
+                Ba giải pháp cốt lõi giúp doanh nghiệp
+                <span class="bg-gradient-to-r from-primary to-red-500 bg-clip-text text-transparent"> vận hành hiệu quả</span>
             </h2>
-            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                Ba giải pháp cốt lõi giúp doanh nghiệp vận hành hiệu quả và tuân thủ pháp luật
-            </p>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
             <!-- Microsoft 365 -->
-            <div class="bg-gray-50 rounded-2xl overflow-hidden hover:shadow-xl transition group" data-animate>
-                <div class="h-48 overflow-hidden">
-                    <img src="{% static 'images/products/m365.jpg' %}" alt="Microsoft 365" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+            <a href="{% url 'landing:microsoft365' %}" class="group relative block cursor-pointer" data-animate>
+                <div class="relative bg-white rounded-3xl overflow-hidden border border-gray-200 hover:border-primary/30 transition-all duration-500 h-full shadow-lg hover:shadow-xl">
+                    <div class="h-56 overflow-hidden">
+                        <img src="{% static 'images/products/m365.jpg' %}" alt="Microsoft 365" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-white via-white/50 to-transparent"></div>
+                    </div>
+                    <div class="p-8">
+                        <div class="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-primary/10 border border-primary/20 mb-6">
+                            <svg class="w-7 h-7 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-4">Microsoft 365</h3>
+                        <p class="text-gray-600 mb-6 leading-relaxed">
+                            Tối ưu hóa hiệu suất làm việc mọi lúc mọi nơi với bộ công cụ văn phòng đám mây bản quyền.
+                        </p>
+                        <ul class="space-y-3 text-sm text-gray-600">
+                            <li class="flex items-center"><span class="w-1.5 h-1.5 rounded-full bg-primary mr-3"></span> Email @tencongty.com</li>
+                            <li class="flex items-center"><span class="w-1.5 h-1.5 rounded-full bg-primary mr-3"></span> Word, Excel, PowerPoint online</li>
+                            <li class="flex items-center"><span class="w-1.5 h-1.5 rounded-full bg-primary mr-3"></span> 1TB lưu trữ OneDrive</li>
+                        </ul>
+                        <div class="mt-6 flex items-center text-primary font-semibold">
+                            Xem chi tiết
+                            <svg class="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                            </svg>
+                        </div>
+                    </div>
                 </div>
-                <div class="p-8">
-                    <h3 class="text-xl font-bold text-gray-900 mb-4">Microsoft 365</h3>
-                    <p class="text-gray-600 mb-6">
-                        Tối ưu hóa hiệu suất làm việc mọi lúc mọi nơi với bộ công cụ văn phòng đám mây bản quyền. Email doanh nghiệp, Office apps, Teams, OneDrive.
-                    </p>
-                    <ul class="space-y-2 text-sm text-gray-600">
-                        <li class="flex items-center"><span class="text-secondary mr-2">✓</span> Email @tencongty.com</li>
-                        <li class="flex items-center"><span class="text-secondary mr-2">✓</span> Word, Excel, PowerPoint online</li>
-                        <li class="flex items-center"><span class="text-secondary mr-2">✓</span> 1TB lưu trữ OneDrive</li>
-                    </ul>
-                </div>
-            </div>
+            </a>
 
             <!-- Văn phòng ảo -->
-            <div class="bg-gray-50 rounded-2xl overflow-hidden hover:shadow-xl transition group" data-animate>
-                <div class="h-48 overflow-hidden">
-                    <img src="{% static 'images/products/office.jpg' %}" alt="Văn phòng ảo" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+            <a href="{% url 'landing:vanphongao' %}" class="group relative block cursor-pointer" data-animate>
+                <div class="relative bg-white rounded-3xl overflow-hidden border border-gray-200 hover:border-primary/30 transition-all duration-500 h-full shadow-lg hover:shadow-xl">
+                    <div class="h-56 overflow-hidden">
+                        <img src="{% static 'images/products/office.jpg' %}" alt="Văn phòng ảo" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-white via-white/50 to-transparent"></div>
+                    </div>
+                    <div class="p-8">
+                        <div class="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-primary/10 border border-primary/20 mb-6">
+                            <svg class="w-7 h-7 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-4">Văn phòng ảo</h3>
+                        <p class="text-gray-600 mb-6 leading-relaxed">
+                            Giải pháp sở hữu địa chỉ đăng ký kinh doanh chuyên nghiệp và hợp pháp với chi phí tối thiểu.
+                        </p>
+                        <ul class="space-y-3 text-sm text-gray-600">
+                            <li class="flex items-center"><span class="w-1.5 h-1.5 rounded-full bg-primary mr-3"></span> Địa chỉ đăng ký kinh doanh</li>
+                            <li class="flex items-center"><span class="w-1.5 h-1.5 rounded-full bg-primary mr-3"></span> Nhận thư và bưu phẩm</li>
+                            <li class="flex items-center"><span class="w-1.5 h-1.5 rounded-full bg-primary mr-3"></span> Phòng họp theo giờ</li>
+                        </ul>
+                        <div class="mt-6 flex items-center text-primary font-semibold">
+                            Xem chi tiết
+                            <svg class="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                            </svg>
+                        </div>
+                    </div>
                 </div>
-                <div class="p-8">
-                    <h3 class="text-xl font-bold text-gray-900 mb-4">Văn phòng ảo</h3>
-                    <p class="text-gray-600 mb-6">
-                        Giải pháp sở hữu địa chỉ đăng ký kinh doanh chuyên nghiệp và hợp pháp với chi phí tối thiểu. Tiết kiệm 90% chi phí văn phòng.
-                    </p>
-                    <ul class="space-y-2 text-sm text-gray-600">
-                        <li class="flex items-center"><span class="text-secondary mr-2">✓</span> Địa chỉ đăng ký kinh doanh</li>
-                        <li class="flex items-center"><span class="text-secondary mr-2">✓</span> Nhận thư và bưu phẩm</li>
-                        <li class="flex items-center"><span class="text-secondary mr-2">✓</span> Phòng họp theo giờ</li>
-                    </ul>
-                </div>
-            </div>
+            </a>
 
             <!-- Chữ ký số -->
-            <div class="bg-gray-50 rounded-2xl overflow-hidden hover:shadow-xl transition group" data-animate>
-                <div class="h-48 overflow-hidden">
-                    <img src="{% static 'images/products/digital.jpg' %}" alt="Chữ ký số" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+            <a href="{% url 'landing:chukyso' %}" class="group relative block cursor-pointer" data-animate>
+                <div class="relative bg-white rounded-3xl overflow-hidden border border-gray-200 hover:border-primary/30 transition-all duration-500 h-full shadow-lg hover:shadow-xl">
+                    <div class="h-56 overflow-hidden">
+                        <img src="{% static 'images/products/digital.jpg' %}" alt="Chữ ký số" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-white via-white/50 to-transparent"></div>
+                    </div>
+                    <div class="p-8">
+                        <div class="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-primary/10 border border-primary/20 mb-6">
+                            <svg class="w-7 h-7 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-4">Chữ ký số & Kế toán</h3>
+                        <p class="text-gray-600 mb-6 leading-relaxed">
+                            Bộ công cụ pháp lý số "All-in-one" giúp đơn giản hóa nghiệp vụ kế toán và kê khai thuế.
+                        </p>
+                        <ul class="space-y-3 text-sm text-gray-600">
+                            <li class="flex items-center"><span class="w-1.5 h-1.5 rounded-full bg-primary mr-3"></span> Chữ ký số CA hợp pháp</li>
+                            <li class="flex items-center"><span class="w-1.5 h-1.5 rounded-full bg-primary mr-3"></span> Hoá đơn điện tử E-Invoice</li>
+                            <li class="flex items-center"><span class="w-1.5 h-1.5 rounded-full bg-primary mr-3"></span> Phần mềm kế toán</li>
+                        </ul>
+                        <div class="mt-6 flex items-center text-primary font-semibold">
+                            Xem chi tiết
+                            <svg class="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                            </svg>
+                        </div>
+                    </div>
                 </div>
-                <div class="p-8">
-                    <h3 class="text-xl font-bold text-gray-900 mb-4">Chữ ký số, Hoá đơn & Kế toán</h3>
-                    <p class="text-gray-600 mb-6">
-                        Bộ công cụ pháp lý số "All-in-one" giúp đơn giản hóa nghiệp vụ kế toán và kê khai thuế. Tiết kiệm thời gian, giảm sai sót.
-                    </p>
-                    <ul class="space-y-2 text-sm text-gray-600">
-                        <li class="flex items-center"><span class="text-secondary mr-2">✓</span> Chữ ký số CA hợp pháp</li>
-                        <li class="flex items-center"><span class="text-secondary mr-2">✓</span> Hoá đơn điện tử E-Invoice</li>
-                        <li class="flex items-center"><span class="text-secondary mr-2">✓</span> Phần mềm kế toán</li>
-                    </ul>
-                </div>
-            </div>
+            </a>
         </div>
     </div>
 </section>
 
-<!-- BENEFITS SECTION -->
-<section id="benefits" class="py-20 bg-gray-50">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-16" data-animate>
-            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                Tại sao chọn Trương Gia?
+<!-- BENEFITS SECTION - White background -->
+<section id="benefits" class="py-24 bg-white relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="text-center mb-20" data-animate>
+            <span class="text-primary font-medium tracking-widest uppercase text-sm">Lợi ích</span>
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mt-4 mb-6">
+                Tại sao chọn <span class="bg-gradient-to-r from-primary to-red-500 bg-clip-text text-transparent">chúng tôi?</span>
             </h2>
-            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                Kinh nghiệm 10+ năm đồng hành cùng hàng nghìn doanh nghiệp Việt Nam
-            </p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div class="text-center" data-animate>
-                <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <span class="text-3xl font-bold text-primary">10+</span>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+            <div class="text-center group" data-animate>
+                <div class="relative inline-flex">
+                    <div class="absolute inset-0 bg-primary/10 rounded-full filter blur-xl opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
+                    <div class="relative w-24 h-24 bg-gradient-to-br from-gray-100 to-white rounded-full flex items-center justify-center border border-gray-200 group-hover:border-primary/30 transition-all duration-300 shadow-lg">
+                        <span class="text-4xl font-bold bg-gradient-to-r from-primary to-red-500 bg-clip-text text-transparent">10+</span>
+                    </div>
                 </div>
-                <h3 class="font-semibold text-gray-900 mb-2">Năm kinh nghiệm</h3>
-                <p class="text-gray-600 text-sm">Chuyên gia trong lĩnh vực chuyển đổi số doanh nghiệp</p>
+                <h3 class="font-semibold text-gray-900 mt-6 mb-2">Năm kinh nghiệm</h3>
+                <p class="text-gray-500 text-sm">Chuyên gia chuyển đổi số</p>
             </div>
 
-            <div class="text-center" data-animate>
-                <div class="w-16 h-16 bg-secondary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <span class="text-3xl font-bold text-secondary">1000+</span>
+            <div class="text-center group" data-animate>
+                <div class="relative inline-flex">
+                    <div class="absolute inset-0 bg-primary/10 rounded-full filter blur-xl opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
+                    <div class="relative w-24 h-24 bg-gradient-to-br from-gray-100 to-white rounded-full flex items-center justify-center border border-gray-200 group-hover:border-primary/30 transition-all duration-300 shadow-lg">
+                        <span class="text-4xl font-bold bg-gradient-to-r from-primary to-red-500 bg-clip-text text-transparent">1K+</span>
+                    </div>
                 </div>
-                <h3 class="font-semibold text-gray-900 mb-2">Khách hàng</h3>
-                <p class="text-gray-600 text-sm">Doanh nghiệp tin tưởng lựa chọn dịch vụ</p>
+                <h3 class="font-semibold text-gray-900 mt-6 mb-2">Khách hàng</h3>
+                <p class="text-gray-500 text-sm">Doanh nghiệp tin tưởng</p>
             </div>
 
-            <div class="text-center" data-animate>
-                <div class="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <span class="text-3xl font-bold text-accent">24/7</span>
+            <div class="text-center group" data-animate>
+                <div class="relative inline-flex">
+                    <div class="absolute inset-0 bg-primary/10 rounded-full filter blur-xl opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
+                    <div class="relative w-24 h-24 bg-gradient-to-br from-gray-100 to-white rounded-full flex items-center justify-center border border-gray-200 group-hover:border-primary/30 transition-all duration-300 shadow-lg">
+                        <span class="text-4xl font-bold bg-gradient-to-r from-primary to-red-500 bg-clip-text text-transparent">24/7</span>
+                    </div>
                 </div>
-                <h3 class="font-semibold text-gray-900 mb-2">Hỗ trợ kỹ thuật</h3>
-                <p class="text-gray-600 text-sm">Sẵn sàng hỗ trợ bất cứ lúc nào bạn cần</p>
+                <h3 class="font-semibold text-gray-900 mt-6 mb-2">Hỗ trợ</h3>
+                <p class="text-gray-500 text-sm">Sẵn sàng mọi lúc</p>
             </div>
 
-            <div class="text-center" data-animate>
-                <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <span class="text-3xl font-bold text-green-600">100%</span>
+            <div class="text-center group" data-animate>
+                <div class="relative inline-flex">
+                    <div class="absolute inset-0 bg-primary/10 rounded-full filter blur-xl opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
+                    <div class="relative w-24 h-24 bg-gradient-to-br from-gray-100 to-white rounded-full flex items-center justify-center border border-gray-200 group-hover:border-primary/30 transition-all duration-300 shadow-lg">
+                        <span class="text-4xl font-bold bg-gradient-to-r from-primary to-red-500 bg-clip-text text-transparent">100%</span>
+                    </div>
                 </div>
-                <h3 class="font-semibold text-gray-900 mb-2">Hợp pháp</h3>
-                <p class="text-gray-600 text-sm">Sản phẩm chính hãng, dịch vụ uy tín</p>
+                <h3 class="font-semibold text-gray-900 mt-6 mb-2">Hợp pháp</h3>
+                <p class="text-gray-500 text-sm">Sản phẩm chính hãng</p>
             </div>
         </div>
     </div>
 </section>
 
-<!-- SOCIAL PROOF / TRUST SECTION -->
-<section class="py-16 bg-white border-y border-gray-100">
+<!-- PARTNERS SECTION - Light gray -->
+<section class="py-16 bg-gray-100 border-y border-gray-200">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center">
-            <p class="text-gray-500 mb-8 uppercase tracking-wider text-sm font-medium">
-                Đối tác tin cậy
+            <p class="text-gray-500 mb-10 uppercase tracking-widest text-xs font-medium">
+                Đối tác chiến lược
             </p>
-            <div class="flex flex-wrap justify-center items-center gap-8 md:gap-16">
-                <div class="text-gray-400 text-xl font-bold hover:text-primary transition">Microsoft Partner</div>
-                <div class="text-gray-400 text-xl font-bold hover:text-primary transition">VNPT</div>
-                <div class="text-gray-400 text-xl font-bold hover:text-primary transition">Viettel-CA</div>
-                <div class="text-gray-400 text-xl font-bold hover:text-primary transition">MISA</div>
+            <div class="flex flex-wrap justify-center items-center gap-12 md:gap-20">
+                <div class="text-gray-400 text-xl font-bold hover:text-primary transition-colors duration-300 cursor-pointer">Microsoft Partner</div>
+                <div class="text-gray-400 text-xl font-bold hover:text-primary transition-colors duration-300 cursor-pointer">VNPT</div>
+                <div class="text-gray-400 text-xl font-bold hover:text-primary transition-colors duration-300 cursor-pointer">Viettel-CA</div>
+                <div class="text-gray-400 text-xl font-bold hover:text-primary transition-colors duration-300 cursor-pointer">MISA</div>
             </div>
         </div>
     </div>
 </section>
 
-<!-- TESTIMONIALS SECTION -->
-<section class="py-20 bg-gray-50">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<!-- TESTIMONIALS SECTION - White background -->
+<section class="py-24 bg-white relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div class="text-center mb-16" data-animate>
-            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                Khách hàng nói gì về chúng tôi
+            <span class="text-primary font-medium tracking-widest uppercase text-sm">Đánh giá</span>
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mt-4">
+                Khách hàng <span class="bg-gradient-to-r from-primary to-red-500 bg-clip-text text-transparent">nói gì?</span>
             </h2>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
             <!-- Testimonial 1 -->
-            <div class="bg-white rounded-2xl p-8 shadow-sm" data-animate>
+            <div class="bg-gray-50 rounded-2xl p-8 border border-gray-200 hover:border-primary/20 transition-all duration-300 hover:shadow-lg" data-animate>
                 <div class="flex items-center mb-6">
-                    <img src="{% static 'images/testimonials/avatar-1.jpg' %}" alt="Nguyễn Văn A" class="w-14 h-14 rounded-full object-cover mr-4">
-                    <div>
+                    <div class="w-14 h-14 rounded-full bg-gradient-to-r from-primary to-red-800 flex items-center justify-center text-white font-bold text-xl">N</div>
+                    <div class="ml-4">
                         <h4 class="font-semibold text-gray-900">Nguyễn Văn A</h4>
                         <p class="text-sm text-gray-500">Giám đốc, Công ty ABC</p>
                     </div>
                 </div>
-                <p class="text-gray-600 italic">"Trương Gia đã giúp chúng tôi tiết kiệm 50% chi phí văn phòng và nâng cao hiệu suất làm việc đáng kể."</p>
+                <p class="text-gray-600 italic leading-relaxed">"Trương Gia đã giúp chúng tôi tiết kiệm 50% chi phí văn phòng và nâng cao hiệu suất làm việc đáng kể."</p>
+                <div class="flex gap-1 mt-6">
+                    <svg class="w-5 h-5 text-primary" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                    <svg class="w-5 h-5 text-primary" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                    <svg class="w-5 h-5 text-primary" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                    <svg class="w-5 h-5 text-primary" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                    <svg class="w-5 h-5 text-primary" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                </div>
             </div>
 
             <!-- Testimonial 2 -->
-            <div class="bg-white rounded-2xl p-8 shadow-sm" data-animate>
+            <div class="bg-gray-50 rounded-2xl p-8 border border-gray-200 hover:border-primary/20 transition-all duration-300 hover:shadow-lg" data-animate>
                 <div class="flex items-center mb-6">
-                    <img src="{% static 'images/testimonials/avatar-2.jpg' %}" alt="Trần Thị B" class="w-14 h-14 rounded-full object-cover mr-4">
-                    <div>
+                    <div class="w-14 h-14 rounded-full bg-gradient-to-r from-primary to-red-800 flex items-center justify-center text-white font-bold text-xl">T</div>
+                    <div class="ml-4">
                         <h4 class="font-semibold text-gray-900">Trần Thị B</h4>
                         <p class="text-sm text-gray-500">Kế toán trưởng, Công ty XYZ</p>
                     </div>
                 </div>
-                <p class="text-gray-600 italic">"Phần mềm kế toán và hoá đơn điện tử rất dễ sử dụng, hỗ trợ kỹ thuật nhiệt tình 24/7."</p>
+                <p class="text-gray-600 italic leading-relaxed">"Phần mềm kế toán và hoá đơn điện tử rất dễ sử dụng, hỗ trợ kỹ thuật nhiệt tình 24/7."</p>
+                <div class="flex gap-1 mt-6">
+                    <svg class="w-5 h-5 text-primary" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                    <svg class="w-5 h-5 text-primary" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                    <svg class="w-5 h-5 text-primary" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                    <svg class="w-5 h-5 text-primary" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                    <svg class="w-5 h-5 text-primary" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                </div>
             </div>
 
             <!-- Testimonial 3 -->
-            <div class="bg-white rounded-2xl p-8 shadow-sm" data-animate>
+            <div class="bg-gray-50 rounded-2xl p-8 border border-gray-200 hover:border-primary/20 transition-all duration-300 hover:shadow-lg" data-animate>
                 <div class="flex items-center mb-6">
-                    <img src="{% static 'images/testimonials/avatar-3.jpg' %}" alt="Lê Văn C" class="w-14 h-14 rounded-full object-cover mr-4">
-                    <div>
+                    <div class="w-14 h-14 rounded-full bg-gradient-to-r from-primary to-red-800 flex items-center justify-center text-white font-bold text-xl">L</div>
+                    <div class="ml-4">
                         <h4 class="font-semibold text-gray-900">Lê Văn C</h4>
                         <p class="text-sm text-gray-500">CEO, Startup DEF</p>
                     </div>
                 </div>
-                <p class="text-gray-600 italic">"Microsoft 365 giúp team chúng tôi làm việc từ xa hiệu quả. Chi phí hợp lý, chất lượng tuyệt vời."</p>
+                <p class="text-gray-600 italic leading-relaxed">"Microsoft 365 giúp team chúng tôi làm việc từ xa hiệu quả. Chi phí hợp lý, chất lượng tuyệt vời."</p>
+                <div class="flex gap-1 mt-6">
+                    <svg class="w-5 h-5 text-primary" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                    <svg class="w-5 h-5 text-primary" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                    <svg class="w-5 h-5 text-primary" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                    <svg class="w-5 h-5 text-primary" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                    <svg class="w-5 h-5 text-primary" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                </div>
             </div>
         </div>
     </div>
 </section>
 
-<!-- CTA SECTION -->
-<section id="contact" class="relative py-20 text-white overflow-hidden">
-    <!-- Background Image -->
-    <div class="absolute inset-0 z-0">
-        <img src="{% static 'images/cta-bg.jpg' %}" alt="" class="w-full h-full object-cover">
-        <div class="absolute inset-0 bg-gradient-to-br from-primary/95 to-blue-900/95"></div>
+<!-- CTA / CONTACT SECTION - Dark section -->
+<section id="contact" class="relative py-24 overflow-hidden">
+    <!-- Background -->
+    <div class="absolute inset-0 bg-gradient-to-br from-gray-900 via-black to-gray-900">
+        <div class="absolute inset-0 bg-gradient-to-r from-primary/10 via-transparent to-primary/10"></div>
+        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/10 rounded-full filter blur-3xl"></div>
     </div>
 
     <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h2 class="text-3xl md:text-4xl font-bold mb-6" data-animate>
-            Sẵn sàng chuyển đổi số doanh nghiệp?
+        <span class="text-primary font-medium tracking-widest uppercase text-sm">Liên hệ</span>
+        <h2 class="text-3xl md:text-4xl font-bold text-white mt-4 mb-6" data-animate>
+            Sẵn sàng <span class="bg-gradient-to-r from-primary to-red-500 bg-clip-text text-transparent">chuyển đổi số?</span>
         </h2>
-        <p class="text-xl text-blue-100 mb-8" data-animate>
+        <p class="text-xl text-gray-400 mb-12" data-animate>
             Liên hệ ngay để được tư vấn miễn phí và báo giá tốt nhất
         </p>
 
-        <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12" data-animate>
-            <a href="tel:0989222800" class="btn-primary bg-accent hover:bg-orange-500 text-white px-8 py-4 rounded-lg font-semibold text-lg transition transform hover:scale-105 inline-flex items-center justify-center">
-                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <div class="flex flex-col sm:flex-row gap-4 justify-center mb-16" data-animate>
+            <a href="tel:0989222800" class="group relative overflow-hidden bg-gradient-to-r from-primary to-primary-dark text-white px-10 py-4 rounded-full font-semibold text-lg transition-all duration-300 hover:shadow-2xl hover:shadow-primary/40 hover:-translate-y-1 inline-flex items-center justify-center">
+                <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
                 </svg>
-                Gọi ngay: 0989 222 800
+                <span>Gọi ngay: 0989 222 800</span>
             </a>
-            <a href="mailto:giaiphaptruonggia@gmail.com" class="bg-white/10 hover:bg-white/20 text-white px-8 py-4 rounded-lg font-semibold text-lg transition border border-white/30 inline-flex items-center justify-center">
-                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <a href="mailto:giaiphaptruonggia@gmail.com" class="border-2 border-white/20 hover:border-primary/50 text-white px-10 py-4 rounded-full font-semibold text-lg transition-all duration-300 hover:bg-white/5 inline-flex items-center justify-center">
+                <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
                 </svg>
                 Gửi email
@@ -256,14 +365,14 @@
         </div>
 
         <!-- Contact Form -->
-        <div class="bg-white/10 rounded-2xl p-8 backdrop-blur-sm max-w-xl mx-auto" data-animate>
-            <h3 class="text-xl font-semibold mb-6">Hoặc để lại thông tin</h3>
+        <div class="bg-white rounded-3xl p-10 border border-gray-200 max-w-xl mx-auto shadow-2xl" data-animate>
+            <h3 class="text-2xl font-semibold text-gray-900 mb-8">Để lại thông tin</h3>
 
             {% if messages %}
-            <div class="mb-6">
+            <div class="mb-8">
                 {% for message in messages %}
-                <div class="bg-green-500/20 border border-green-400 text-green-100 px-4 py-3 rounded-lg flex items-center">
-                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div class="bg-green-50 border border-green-200 text-green-700 px-6 py-4 rounded-xl flex items-center">
+                    <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
                     </svg>
                     {{ message }}
@@ -274,41 +383,41 @@
 
             <form id="contact-form" method="post" action="{% url 'landing:index' %}#contact">
                 {% csrf_token %}
-                <div class="space-y-4">
+                <div class="space-y-5">
                     <div>
                         <input type="text" id="name" name="name" placeholder="Họ và tên *" required
                                value="{{ form.name.value|default:'' }}"
-                               class="w-full px-4 py-3 rounded-lg bg-white/10 border {% if form.name.errors %}border-red-400{% else %}border-white/30{% endif %} text-white placeholder-blue-200 focus:border-white focus:ring-2 focus:ring-white/20">
+                               class="w-full px-5 py-4 rounded-xl bg-gray-50 border {% if form.name.errors %}border-red-500{% else %}border-gray-200{% endif %} text-gray-900 placeholder-gray-500 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-200">
                         {% if form.name.errors %}
-                        <p class="text-red-300 text-sm mt-1">{{ form.name.errors.0 }}</p>
+                        <p class="text-red-500 text-sm mt-2">{{ form.name.errors.0 }}</p>
                         {% endif %}
                     </div>
                     <div>
                         <input type="tel" id="phone" name="phone" placeholder="Số điện thoại *" required
                                value="{{ form.phone.value|default:'' }}"
-                               class="w-full px-4 py-3 rounded-lg bg-white/10 border {% if form.phone.errors %}border-red-400{% else %}border-white/30{% endif %} text-white placeholder-blue-200 focus:border-white focus:ring-2 focus:ring-white/20">
+                               class="w-full px-5 py-4 rounded-xl bg-gray-50 border {% if form.phone.errors %}border-red-500{% else %}border-gray-200{% endif %} text-gray-900 placeholder-gray-500 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-200">
                         {% if form.phone.errors %}
-                        <p class="text-red-300 text-sm mt-1">{{ form.phone.errors.0 }}</p>
+                        <p class="text-red-500 text-sm mt-2">{{ form.phone.errors.0 }}</p>
                         {% endif %}
                     </div>
                     <div>
                         <select id="service" name="service" required
-                                class="w-full px-4 py-3 rounded-lg bg-white/10 border {% if form.service.errors %}border-red-400{% else %}border-white/30{% endif %} text-white focus:border-white focus:ring-2 focus:ring-white/20">
-                            <option value="" class="text-gray-900">Chọn dịch vụ quan tâm *</option>
-                            <option value="m365" class="text-gray-900" {% if form.service.value == 'm365' %}selected{% endif %}>Microsoft 365</option>
-                            <option value="office" class="text-gray-900" {% if form.service.value == 'office' %}selected{% endif %}>Văn phòng ảo</option>
-                            <option value="digital" class="text-gray-900" {% if form.service.value == 'digital' %}selected{% endif %}>Chữ ký số & Hoá đơn</option>
-                            <option value="all" class="text-gray-900" {% if form.service.value == 'all' %}selected{% endif %}>Tất cả dịch vụ</option>
+                                class="w-full px-5 py-4 rounded-xl bg-gray-50 border {% if form.service.errors %}border-red-500{% else %}border-gray-200{% endif %} text-gray-900 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-200">
+                            <option value="">Chọn dịch vụ quan tâm *</option>
+                            <option value="m365" {% if form.service.value == 'm365' %}selected{% endif %}>Microsoft 365</option>
+                            <option value="office" {% if form.service.value == 'office' %}selected{% endif %}>Văn phòng ảo</option>
+                            <option value="digital" {% if form.service.value == 'digital' %}selected{% endif %}>Chữ ký số & Hoá đơn</option>
+                            <option value="all" {% if form.service.value == 'all' %}selected{% endif %}>Tất cả dịch vụ</option>
                         </select>
                         {% if form.service.errors %}
-                        <p class="text-red-300 text-sm mt-1">{{ form.service.errors.0 }}</p>
+                        <p class="text-red-500 text-sm mt-2">{{ form.service.errors.0 }}</p>
                         {% endif %}
                     </div>
                     <div>
-                        <textarea id="message" name="message" rows="3" placeholder="Nội dung cần tư vấn"
-                                  class="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/30 text-white placeholder-blue-200 focus:border-white focus:ring-2 focus:ring-white/20">{{ form.message.value|default:'' }}</textarea>
+                        <textarea id="message" name="message" rows="4" placeholder="Nội dung cần tư vấn"
+                                  class="w-full px-5 py-4 rounded-xl bg-gray-50 border border-gray-200 text-gray-900 placeholder-gray-500 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-200 resize-none">{{ form.message.value|default:'' }}</textarea>
                     </div>
-                    <button type="submit" class="w-full btn-primary bg-accent hover:bg-orange-500 text-white px-8 py-4 rounded-lg font-semibold text-lg transition transform hover:scale-105">
+                    <button type="submit" class="w-full bg-gradient-to-r from-primary to-primary-dark text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 hover:shadow-xl hover:shadow-primary/30 hover:-translate-y-0.5">
                         Gửi yêu cầu tư vấn
                     </button>
                 </div>

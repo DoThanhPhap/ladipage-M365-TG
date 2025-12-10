@@ -1,3 +1,36 @@
+"""
+Admin configuration for landing app.
+"""
 from django.contrib import admin
+from .models import ContactSubmission
 
-# Register your models here.
+
+@admin.register(ContactSubmission)
+class ContactSubmissionAdmin(admin.ModelAdmin):
+    """Admin interface for contact submissions."""
+
+    list_display = ['name', 'phone', 'service', 'status', 'created_at']
+    list_filter = ['status', 'service', 'created_at']
+    search_fields = ['name', 'phone', 'message']
+    list_editable = ['status']
+    readonly_fields = ['created_at', 'updated_at']
+    ordering = ['-created_at']
+
+    fieldsets = (
+        ('Thông tin khách hàng', {
+            'fields': ('name', 'phone', 'service', 'message')
+        }),
+        ('Quản lý', {
+            'fields': ('status', 'notes')
+        }),
+        ('Thời gian', {
+            'fields': ('created_at', 'updated_at'),
+            'classes': ('collapse',)
+        }),
+    )
+
+
+# Customize admin site header
+admin.site.site_header = 'Tự Động Hoá Trương Gia - Admin'
+admin.site.site_title = 'Trương Gia Admin'
+admin.site.index_title = 'Quản lý hệ thống'

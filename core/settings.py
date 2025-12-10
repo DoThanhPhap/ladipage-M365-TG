@@ -12,14 +12,17 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Security settings from environment
 SECRET_KEY = config('SECRET_KEY', default='dev-secret-key-change-in-production')
 DEBUG = config('DEBUG', default=False, cast=bool)
-ALLOWED_HOSTS = config('ALLOWED_HOSTS', default='.up.railway.app,.railway.app,.vercel.app,localhost,127.0.0.1').split(',')
+ALLOWED_HOSTS = ['*']  # Allow all hosts for development
 
 # CSRF trusted origins for Railway
 CSRF_TRUSTED_ORIGINS = config('CSRF_TRUSTED_ORIGINS', default='https://*.up.railway.app,https://*.railway.app,https://*.vercel.app').split(',')
 
-# Application definition - minimal for landing page
+# Application definition
 INSTALLED_APPS = [
+    'django.contrib.admin',
+    'django.contrib.auth',
     'django.contrib.contenttypes',
+    'django.contrib.sessions',
     'django.contrib.staticfiles',
     'django.contrib.messages',
     'whitenoise.runserver_nostatic',
@@ -32,6 +35,7 @@ MIDDLEWARE = [
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
+    'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
@@ -47,6 +51,7 @@ TEMPLATES = [
             'context_processors': [
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
+                'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
             ],
         },
@@ -63,8 +68,8 @@ DATABASES = {
     }
 }
 
-# Sessions - cookie-based (no DB dependency)
-SESSION_ENGINE = 'django.contrib.sessions.backends.signed_cookies'
+# Sessions - database backed for admin
+SESSION_ENGINE = 'django.contrib.sessions.backends.db'
 
 # Internationalization
 LANGUAGE_CODE = 'vi'

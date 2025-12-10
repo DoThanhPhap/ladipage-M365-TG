@@ -1,0 +1,288 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Microsoft 365 - Tự Động Hoá Trương Gia{% endblock %}
+
+{% block content %}
+<!-- Hero Section - Dark -->
+<section class="relative min-h-[60vh] flex items-center overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-gray-900 via-black to-gray-900">
+        <div class="absolute inset-0 opacity-30">
+            <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/20 rounded-full blur-3xl animate-pulse"></div>
+            <div class="absolute bottom-1/4 right-1/4 w-80 h-80 bg-primary/10 rounded-full blur-3xl animate-pulse" style="animation-delay: 1s;"></div>
+        </div>
+    </div>
+
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+                <a href="{% url 'landing:index' %}" class="inline-flex items-center text-gray-400 hover:text-primary transition-colors mb-6">
+                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+                    </svg>
+                    Quay lại trang chủ
+                </a>
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
+                    Microsoft <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-red-400">365</span>
+                </h1>
+                <p class="text-xl text-gray-300 mb-8 leading-relaxed">
+                    Bộ công cụ văn phòng đám mây bản quyền giúp tối ưu hóa hiệu suất làm việc mọi lúc mọi nơi. Kết nối đội ngũ, bảo mật dữ liệu, nâng cao năng suất.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="#contact" class="bg-gradient-to-r from-primary to-primary-dark text-white px-8 py-4 rounded-full font-semibold text-center hover:shadow-lg hover:shadow-primary/30 transition-all duration-300 hover:-translate-y-1">
+                        Đăng ký ngay
+                    </a>
+                    <a href="tel:0989222800" class="border border-white/20 text-white px-8 py-4 rounded-full font-semibold text-center hover:bg-white/10 transition-all duration-300">
+                        Gọi tư vấn: 0989 222 800
+                    </a>
+                </div>
+            </div>
+            <div class="hidden lg:flex justify-center">
+                <div class="relative">
+                    <div class="absolute inset-0 bg-gradient-to-r from-primary/30 to-red-400/30 rounded-3xl blur-2xl"></div>
+                    <div class="relative bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-xl rounded-3xl p-8 border border-white/10">
+                        <svg class="w-48 h-48 mx-auto text-primary" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M11.5 2.5V11H3.5V3.5C3.5 2.95 3.95 2.5 4.5 2.5H11.5ZM12.5 2.5H19.5C20.05 2.5 20.5 2.95 20.5 3.5V11H12.5V2.5ZM3.5 12H11.5V20.5H4.5C3.95 20.5 3.5 20.05 3.5 19.5V12ZM12.5 12H20.5V19.5C20.5 20.05 20.05 20.5 19.5 20.5H12.5V12Z"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Features Section - Light -->
+<section class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                Tính năng <span class="text-primary">nổi bật</span>
+            </h2>
+            <p class="text-gray-600 max-w-2xl mx-auto">
+                Microsoft 365 mang đến trải nghiệm làm việc hiện đại với đầy đủ công cụ văn phòng chuyên nghiệp
+            </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Feature 1 -->
+            <div class="group bg-white rounded-2xl p-8 border border-gray-200 shadow-lg hover:shadow-xl hover:border-primary/30 transition-all duration-300">
+                <div class="w-14 h-14 bg-gradient-to-br from-primary/20 to-primary/10 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                    <svg class="w-7 h-7 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                    </svg>
+                </div>
+                <h3 class="text-xl font-bold text-gray-900 mb-3">Word, Excel, PowerPoint</h3>
+                <p class="text-gray-600">Bộ ứng dụng Office quen thuộc với phiên bản mới nhất, tương thích mọi định dạng file.</p>
+            </div>
+
+            <!-- Feature 2 -->
+            <div class="group bg-white rounded-2xl p-8 border border-gray-200 shadow-lg hover:shadow-xl hover:border-primary/30 transition-all duration-300">
+                <div class="w-14 h-14 bg-gradient-to-br from-primary/20 to-primary/10 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                    <svg class="w-7 h-7 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"/>
+                    </svg>
+                </div>
+                <h3 class="text-xl font-bold text-gray-900 mb-3">OneDrive 1TB</h3>
+                <p class="text-gray-600">Lưu trữ đám mây 1TB cho mỗi người dùng, truy cập file mọi lúc mọi nơi.</p>
+            </div>
+
+            <!-- Feature 3 -->
+            <div class="group bg-white rounded-2xl p-8 border border-gray-200 shadow-lg hover:shadow-xl hover:border-primary/30 transition-all duration-300">
+                <div class="w-14 h-14 bg-gradient-to-br from-primary/20 to-primary/10 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                    <svg class="w-7 h-7 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z"/>
+                    </svg>
+                </div>
+                <h3 class="text-xl font-bold text-gray-900 mb-3">Microsoft Teams</h3>
+                <p class="text-gray-600">Họp trực tuyến, chat nhóm, chia sẻ file và cộng tác theo thời gian thực.</p>
+            </div>
+
+            <!-- Feature 4 -->
+            <div class="group bg-white rounded-2xl p-8 border border-gray-200 shadow-lg hover:shadow-xl hover:border-primary/30 transition-all duration-300">
+                <div class="w-14 h-14 bg-gradient-to-br from-primary/20 to-primary/10 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                    <svg class="w-7 h-7 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                    </svg>
+                </div>
+                <h3 class="text-xl font-bold text-gray-900 mb-3">Email Outlook</h3>
+                <p class="text-gray-600">Hộp thư 50GB với tên miền doanh nghiệp, lịch và danh bạ đồng bộ.</p>
+            </div>
+
+            <!-- Feature 5 -->
+            <div class="group bg-white rounded-2xl p-8 border border-gray-200 shadow-lg hover:shadow-xl hover:border-primary/30 transition-all duration-300">
+                <div class="w-14 h-14 bg-gradient-to-br from-primary/20 to-primary/10 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                    <svg class="w-7 h-7 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                    </svg>
+                </div>
+                <h3 class="text-xl font-bold text-gray-900 mb-3">Bảo mật cao cấp</h3>
+                <p class="text-gray-600">Xác thực đa yếu tố, mã hóa dữ liệu, tuân thủ GDPR và các tiêu chuẩn bảo mật.</p>
+            </div>
+
+            <!-- Feature 6 -->
+            <div class="group bg-white rounded-2xl p-8 border border-gray-200 shadow-lg hover:shadow-xl hover:border-primary/30 transition-all duration-300">
+                <div class="w-14 h-14 bg-gradient-to-br from-primary/20 to-primary/10 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                    <svg class="w-7 h-7 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"/>
+                    </svg>
+                </div>
+                <h3 class="text-xl font-bold text-gray-900 mb-3">Đa thiết bị</h3>
+                <p class="text-gray-600">Cài đặt trên 5 PC/Mac, 5 tablet và 5 điện thoại cho mỗi người dùng.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Pricing Section - White -->
+<section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                Gói <span class="text-primary">dịch vụ</span>
+            </h2>
+            <p class="text-gray-600 max-w-2xl mx-auto">
+                Chọn gói phù hợp với quy mô và nhu cầu của doanh nghiệp
+            </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+            <!-- Basic -->
+            <div class="bg-gray-50 rounded-2xl p-8 border border-gray-200 hover:border-primary/30 hover:shadow-xl transition-all duration-300">
+                <h3 class="text-2xl font-bold text-gray-900 mb-2">Basic</h3>
+                <p class="text-gray-500 mb-6">Dành cho cá nhân & freelancer</p>
+                <div class="mb-8">
+                    <span class="text-4xl font-bold text-gray-900">Liên hệ</span>
+                </div>
+                <ul class="space-y-4 mb-8">
+                    <li class="flex items-center text-gray-700">
+                        <svg class="w-5 h-5 text-primary mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                        </svg>
+                        Word, Excel, PowerPoint
+                    </li>
+                    <li class="flex items-center text-gray-700">
+                        <svg class="w-5 h-5 text-primary mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                        </svg>
+                        OneDrive 1TB
+                    </li>
+                    <li class="flex items-center text-gray-700">
+                        <svg class="w-5 h-5 text-primary mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                        </svg>
+                        Outlook email
+                    </li>
+                </ul>
+                <a href="#contact" class="block text-center py-3 border-2 border-primary text-primary rounded-full hover:bg-primary hover:text-white transition-all duration-300 font-semibold">
+                    Tư vấn ngay
+                </a>
+            </div>
+
+            <!-- Business (Popular) -->
+            <div class="relative bg-gradient-to-br from-primary/5 to-primary/10 rounded-2xl p-8 border-2 border-primary transform hover:scale-105 transition-all duration-300 shadow-xl">
+                <div class="absolute -top-4 left-1/2 -translate-x-1/2">
+                    <span class="bg-gradient-to-r from-primary to-primary-dark text-white text-sm font-semibold px-4 py-1 rounded-full">Phổ biến</span>
+                </div>
+                <h3 class="text-2xl font-bold text-gray-900 mb-2">Business</h3>
+                <p class="text-gray-500 mb-6">Dành cho doanh nghiệp vừa</p>
+                <div class="mb-8">
+                    <span class="text-4xl font-bold text-gray-900">Liên hệ</span>
+                </div>
+                <ul class="space-y-4 mb-8">
+                    <li class="flex items-center text-gray-700">
+                        <svg class="w-5 h-5 text-primary mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                        </svg>
+                        Tất cả tính năng Basic
+                    </li>
+                    <li class="flex items-center text-gray-700">
+                        <svg class="w-5 h-5 text-primary mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                        </svg>
+                        Microsoft Teams đầy đủ
+                    </li>
+                    <li class="flex items-center text-gray-700">
+                        <svg class="w-5 h-5 text-primary mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                        </svg>
+                        SharePoint Online
+                    </li>
+                    <li class="flex items-center text-gray-700">
+                        <svg class="w-5 h-5 text-primary mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                        </svg>
+                        Bảo mật nâng cao
+                    </li>
+                </ul>
+                <a href="#contact" class="block text-center py-3 bg-gradient-to-r from-primary to-primary-dark text-white rounded-full hover:shadow-lg hover:shadow-primary/30 transition-all duration-300 font-semibold">
+                    Tư vấn ngay
+                </a>
+            </div>
+
+            <!-- Enterprise -->
+            <div class="bg-gray-50 rounded-2xl p-8 border border-gray-200 hover:border-primary/30 hover:shadow-xl transition-all duration-300">
+                <h3 class="text-2xl font-bold text-gray-900 mb-2">Enterprise</h3>
+                <p class="text-gray-500 mb-6">Dành cho doanh nghiệp lớn</p>
+                <div class="mb-8">
+                    <span class="text-4xl font-bold text-gray-900">Liên hệ</span>
+                </div>
+                <ul class="space-y-4 mb-8">
+                    <li class="flex items-center text-gray-700">
+                        <svg class="w-5 h-5 text-primary mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                        </svg>
+                        Tất cả tính năng Business
+                    </li>
+                    <li class="flex items-center text-gray-700">
+                        <svg class="w-5 h-5 text-primary mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                        </svg>
+                        Power BI Pro
+                    </li>
+                    <li class="flex items-center text-gray-700">
+                        <svg class="w-5 h-5 text-primary mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                        </svg>
+                        Compliance Center
+                    </li>
+                    <li class="flex items-center text-gray-700">
+                        <svg class="w-5 h-5 text-primary mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                        </svg>
+                        eDiscovery & DLP
+                    </li>
+                </ul>
+                <a href="#contact" class="block text-center py-3 border-2 border-primary text-primary rounded-full hover:bg-primary hover:text-white transition-all duration-300 font-semibold">
+                    Tư vấn ngay
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section - Dark -->
+<section id="contact" class="py-20 bg-gradient-to-br from-gray-900 via-black to-gray-900">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">
+            Sẵn sàng <span class="text-primary">nâng cấp</span> doanh nghiệp?
+        </h2>
+        <p class="text-xl text-gray-400 mb-10">
+            Liên hệ ngay để được tư vấn gói Microsoft 365 phù hợp nhất với doanh nghiệp của bạn
+        </p>
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+            <a href="tel:0989222800" class="bg-gradient-to-r from-primary to-primary-dark text-white px-10 py-4 rounded-full font-semibold text-lg hover:shadow-lg hover:shadow-primary/30 transition-all duration-300 hover:-translate-y-1 flex items-center justify-center">
+                <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+                </svg>
+                0989 222 800
+            </a>
+            <a href="mailto:giaiphaptruonggia@gmail.com" class="border border-white/20 text-white px-10 py-4 rounded-full font-semibold text-lg hover:bg-white/10 transition-all duration-300 flex items-center justify-center">
+                <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                </svg>
+                Gửi email
+            </a>
+        </div>
+    </div>
+</section>
+{% endblock %}

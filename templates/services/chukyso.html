@@ -1,0 +1,397 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Chữ Ký Số & Kế Toán - Tự Động Hoá Trương Gia{% endblock %}
+
+{% block content %}
+<!-- Hero Section - Dark -->
+<section class="relative min-h-[60vh] flex items-center overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-gray-900 via-black to-gray-900">
+        <div class="absolute inset-0 opacity-30">
+            <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/20 rounded-full blur-3xl animate-pulse"></div>
+            <div class="absolute bottom-1/4 right-1/4 w-80 h-80 bg-primary/10 rounded-full blur-3xl animate-pulse" style="animation-delay: 1s;"></div>
+        </div>
+    </div>
+
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+                <a href="{% url 'landing:index' %}" class="inline-flex items-center text-gray-400 hover:text-primary transition-colors mb-6">
+                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+                    </svg>
+                    Quay lại trang chủ
+                </a>
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
+                    Chữ Ký Số & <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-red-400">Kế Toán</span>
+                </h1>
+                <p class="text-xl text-gray-300 mb-8 leading-relaxed">
+                    Bộ công cụ pháp lý số "All-in-one" giúp đơn giản hóa nghiệp vụ kế toán và kê khai thuế. Chữ ký số, hoá đơn điện tử, phần mềm kế toán - tất cả trong một giải pháp.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="#contact" class="bg-gradient-to-r from-primary to-primary-dark text-white px-8 py-4 rounded-full font-semibold text-center hover:shadow-lg hover:shadow-primary/30 transition-all duration-300 hover:-translate-y-1">
+                        Đăng ký ngay
+                    </a>
+                    <a href="tel:0989222800" class="border border-white/20 text-white px-8 py-4 rounded-full font-semibold text-center hover:bg-white/10 transition-all duration-300">
+                        Gọi tư vấn: 0989 222 800
+                    </a>
+                </div>
+            </div>
+            <div class="hidden lg:flex justify-center">
+                <div class="relative">
+                    <div class="absolute inset-0 bg-gradient-to-r from-primary/30 to-red-400/30 rounded-3xl blur-2xl"></div>
+                    <div class="relative bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-xl rounded-3xl p-8 border border-white/10">
+                        <svg class="w-48 h-48 mx-auto text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 2v5a2 2 0 002 2h5"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Services Grid - Light -->
+<section class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                Giải pháp <span class="text-primary">tích hợp</span>
+            </h2>
+            <p class="text-gray-600 max-w-2xl mx-auto">
+                Ba công cụ thiết yếu cho mọi doanh nghiệp trong thời đại số
+            </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+            <!-- Chữ ký số -->
+            <div class="group bg-white rounded-2xl p-8 border border-gray-200 shadow-lg hover:shadow-xl hover:border-primary/30 transition-all duration-300">
+                <div class="w-16 h-16 bg-gradient-to-br from-primary/20 to-primary/10 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                    <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"/>
+                    </svg>
+                </div>
+                <h3 class="text-2xl font-bold text-gray-900 mb-4">Chữ Ký Số</h3>
+                <p class="text-gray-600 mb-6">USB Token ký số được cấp bởi các nhà cung cấp uy tín, hợp lệ với cơ quan thuế.</p>
+                <ul class="space-y-3 text-sm text-gray-700">
+                    <li class="flex items-start">
+                        <svg class="w-5 h-5 text-primary mr-2 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                        </svg>
+                        Ký tờ khai thuế trực tuyến
+                    </li>
+                    <li class="flex items-start">
+                        <svg class="w-5 h-5 text-primary mr-2 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                        </svg>
+                        Ký hợp đồng điện tử
+                    </li>
+                    <li class="flex items-start">
+                        <svg class="w-5 h-5 text-primary mr-2 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                        </svg>
+                        Giao dịch BHXH, ngân hàng
+                    </li>
+                    <li class="flex items-start">
+                        <svg class="w-5 h-5 text-primary mr-2 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                        </svg>
+                        Bảo mật cao, pháp lý đầy đủ
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Hoá đơn điện tử -->
+            <div class="group bg-white rounded-2xl p-8 border border-gray-200 shadow-lg hover:shadow-xl hover:border-primary/30 transition-all duration-300">
+                <div class="w-16 h-16 bg-gradient-to-br from-primary/20 to-primary/10 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                    <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                    </svg>
+                </div>
+                <h3 class="text-2xl font-bold text-gray-900 mb-4">Hoá Đơn Điện Tử</h3>
+                <p class="text-gray-600 mb-6">Phần mềm hoá đơn điện tử đáp ứng Nghị định 123/2020/NĐ-CP và Thông tư 78.</p>
+                <ul class="space-y-3 text-sm text-gray-700">
+                    <li class="flex items-start">
+                        <svg class="w-5 h-5 text-primary mr-2 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                        </svg>
+                        Xuất hoá đơn nhanh chóng
+                    </li>
+                    <li class="flex items-start">
+                        <svg class="w-5 h-5 text-primary mr-2 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                        </svg>
+                        Tự động gửi email khách hàng
+                    </li>
+                    <li class="flex items-start">
+                        <svg class="w-5 h-5 text-primary mr-2 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                        </svg>
+                        Kết nối cơ quan thuế
+                    </li>
+                    <li class="flex items-start">
+                        <svg class="w-5 h-5 text-primary mr-2 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                        </svg>
+                        Báo cáo thống kê chi tiết
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Phần mềm kế toán -->
+            <div class="group bg-white rounded-2xl p-8 border border-gray-200 shadow-lg hover:shadow-xl hover:border-primary/30 transition-all duration-300">
+                <div class="w-16 h-16 bg-gradient-to-br from-primary/20 to-primary/10 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                    <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/>
+                    </svg>
+                </div>
+                <h3 class="text-2xl font-bold text-gray-900 mb-4">Phần Mềm Kế Toán</h3>
+                <p class="text-gray-600 mb-6">Quản lý sổ sách, lập báo cáo tài chính theo chuẩn Việt Nam.</p>
+                <ul class="space-y-3 text-sm text-gray-700">
+                    <li class="flex items-start">
+                        <svg class="w-5 h-5 text-primary mr-2 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                        </svg>
+                        Quản lý thu chi, công nợ
+                    </li>
+                    <li class="flex items-start">
+                        <svg class="w-5 h-5 text-primary mr-2 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                        </svg>
+                        Lập báo cáo thuế tự động
+                    </li>
+                    <li class="flex items-start">
+                        <svg class="w-5 h-5 text-primary mr-2 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                        </svg>
+                        Tích hợp hoá đơn điện tử
+                    </li>
+                    <li class="flex items-start">
+                        <svg class="w-5 h-5 text-primary mr-2 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                        </svg>
+                        Theo chuẩn mực kế toán VN
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Benefits Section - White -->
+<section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                Tại sao chọn <span class="text-primary">chúng tôi</span>?
+            </h2>
+            <p class="text-gray-600 max-w-2xl mx-auto">
+                Đối tác tin cậy cho giải pháp pháp lý số của doanh nghiệp
+            </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <!-- Benefit 1 -->
+            <div class="text-center p-6 bg-gray-50 rounded-2xl hover:shadow-lg transition-all duration-300">
+                <div class="w-16 h-16 bg-gradient-to-br from-primary/20 to-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                    </svg>
+                </div>
+                <h3 class="text-lg font-bold text-gray-900 mb-2">Uy tín & Pháp lý</h3>
+                <p class="text-gray-600 text-sm">Đối tác chính thức của các nhà cung cấp hàng đầu</p>
+            </div>
+
+            <!-- Benefit 2 -->
+            <div class="text-center p-6 bg-gray-50 rounded-2xl hover:shadow-lg transition-all duration-300">
+                <div class="w-16 h-16 bg-gradient-to-br from-primary/20 to-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                    </svg>
+                </div>
+                <h3 class="text-lg font-bold text-gray-900 mb-2">Triển khai nhanh</h3>
+                <p class="text-gray-600 text-sm">Kích hoạt trong vòng 24h sau khi đăng ký</p>
+            </div>
+
+            <!-- Benefit 3 -->
+            <div class="text-center p-6 bg-gray-50 rounded-2xl hover:shadow-lg transition-all duration-300">
+                <div class="w-16 h-16 bg-gradient-to-br from-primary/20 to-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                    </svg>
+                </div>
+                <h3 class="text-lg font-bold text-gray-900 mb-2">Hỗ trợ 24/7</h3>
+                <p class="text-gray-600 text-sm">Đội ngũ kỹ thuật sẵn sàng hỗ trợ mọi lúc</p>
+            </div>
+
+            <!-- Benefit 4 -->
+            <div class="text-center p-6 bg-gray-50 rounded-2xl hover:shadow-lg transition-all duration-300">
+                <div class="w-16 h-16 bg-gradient-to-br from-primary/20 to-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                    </svg>
+                </div>
+                <h3 class="text-lg font-bold text-gray-900 mb-2">Giá cạnh tranh</h3>
+                <p class="text-gray-600 text-sm">Chi phí hợp lý, nhiều ưu đãi combo</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Pricing Section - Light Gray -->
+<section class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                Gói <span class="text-primary">combo</span> tiết kiệm
+            </h2>
+            <p class="text-gray-600 max-w-2xl mx-auto">
+                Đăng ký combo để được ưu đãi đặc biệt
+            </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+            <!-- Chữ ký số only -->
+            <div class="bg-white rounded-2xl p-8 border border-gray-200 shadow-lg hover:shadow-xl hover:border-primary/30 transition-all duration-300">
+                <h3 class="text-2xl font-bold text-gray-900 mb-2">Chữ ký số</h3>
+                <p class="text-gray-500 mb-6">USB Token ký số cơ bản</p>
+                <div class="mb-8">
+                    <span class="text-4xl font-bold text-gray-900">Liên hệ</span>
+                    <span class="text-gray-500">/năm</span>
+                </div>
+                <ul class="space-y-4 mb-8">
+                    <li class="flex items-center text-gray-700">
+                        <svg class="w-5 h-5 text-primary mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                        </svg>
+                        USB Token chính hãng
+                    </li>
+                    <li class="flex items-center text-gray-700">
+                        <svg class="w-5 h-5 text-primary mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                        </svg>
+                        Ký thuế, BHXH, ngân hàng
+                    </li>
+                    <li class="flex items-center text-gray-700">
+                        <svg class="w-5 h-5 text-primary mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                        </svg>
+                        Hỗ trợ cài đặt miễn phí
+                    </li>
+                </ul>
+                <a href="#contact" class="block text-center py-3 border-2 border-primary text-primary rounded-full hover:bg-primary hover:text-white transition-all duration-300 font-semibold">
+                    Tư vấn ngay
+                </a>
+            </div>
+
+            <!-- Combo Popular -->
+            <div class="relative bg-gradient-to-br from-primary/5 to-primary/10 rounded-2xl p-8 border-2 border-primary transform hover:scale-105 transition-all duration-300 shadow-xl">
+                <div class="absolute -top-4 left-1/2 -translate-x-1/2">
+                    <span class="bg-gradient-to-r from-primary to-primary-dark text-white text-sm font-semibold px-4 py-1 rounded-full">Tiết kiệm nhất</span>
+                </div>
+                <h3 class="text-2xl font-bold text-gray-900 mb-2">Combo 3 trong 1</h3>
+                <p class="text-gray-500 mb-6">Chữ ký số + HĐĐT + Kế toán</p>
+                <div class="mb-8">
+                    <span class="text-4xl font-bold text-gray-900">Liên hệ</span>
+                    <span class="text-gray-500">/năm</span>
+                </div>
+                <ul class="space-y-4 mb-8">
+                    <li class="flex items-center text-gray-700">
+                        <svg class="w-5 h-5 text-primary mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                        </svg>
+                        Chữ ký số 1 năm
+                    </li>
+                    <li class="flex items-center text-gray-700">
+                        <svg class="w-5 h-5 text-primary mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                        </svg>
+                        500 hoá đơn điện tử
+                    </li>
+                    <li class="flex items-center text-gray-700">
+                        <svg class="w-5 h-5 text-primary mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                        </svg>
+                        Phần mềm kế toán 1 năm
+                    </li>
+                    <li class="flex items-center text-gray-700">
+                        <svg class="w-5 h-5 text-primary mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                        </svg>
+                        Hỗ trợ kỹ thuật ưu tiên
+                    </li>
+                </ul>
+                <a href="#contact" class="block text-center py-3 bg-gradient-to-r from-primary to-primary-dark text-white rounded-full hover:shadow-lg hover:shadow-primary/30 transition-all duration-300 font-semibold">
+                    Tư vấn ngay
+                </a>
+            </div>
+
+            <!-- Enterprise -->
+            <div class="bg-white rounded-2xl p-8 border border-gray-200 shadow-lg hover:shadow-xl hover:border-primary/30 transition-all duration-300">
+                <h3 class="text-2xl font-bold text-gray-900 mb-2">Doanh nghiệp</h3>
+                <p class="text-gray-500 mb-6">Giải pháp toàn diện</p>
+                <div class="mb-8">
+                    <span class="text-4xl font-bold text-gray-900">Liên hệ</span>
+                    <span class="text-gray-500">/năm</span>
+                </div>
+                <ul class="space-y-4 mb-8">
+                    <li class="flex items-center text-gray-700">
+                        <svg class="w-5 h-5 text-primary mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                        </svg>
+                        Nhiều chữ ký số
+                    </li>
+                    <li class="flex items-center text-gray-700">
+                        <svg class="w-5 h-5 text-primary mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                        </svg>
+                        Không giới hạn hoá đơn
+                    </li>
+                    <li class="flex items-center text-gray-700">
+                        <svg class="w-5 h-5 text-primary mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                        </svg>
+                        Kế toán đa chi nhánh
+                    </li>
+                    <li class="flex items-center text-gray-700">
+                        <svg class="w-5 h-5 text-primary mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                        </svg>
+                        Tư vấn pháp lý miễn phí
+                    </li>
+                </ul>
+                <a href="#contact" class="block text-center py-3 border-2 border-primary text-primary rounded-full hover:bg-primary hover:text-white transition-all duration-300 font-semibold">
+                    Tư vấn ngay
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section - Dark -->
+<section id="contact" class="py-20 bg-gradient-to-br from-gray-900 via-black to-gray-900">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">
+            Số hoá <span class="text-primary">doanh nghiệp</span> ngay hôm nay
+        </h2>
+        <p class="text-xl text-gray-400 mb-10">
+            Liên hệ để được tư vấn giải pháp chữ ký số, hoá đơn điện tử và phần mềm kế toán phù hợp
+        </p>
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+            <a href="tel:0989222800" class="bg-gradient-to-r from-primary to-primary-dark text-white px-10 py-4 rounded-full font-semibold text-lg hover:shadow-lg hover:shadow-primary/30 transition-all duration-300 hover:-translate-y-1 flex items-center justify-center">
+                <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+                </svg>
+                0989 222 800
+            </a>
+            <a href="mailto:giaiphaptruonggia@gmail.com" class="border border-white/20 text-white px-10 py-4 rounded-full font-semibold text-lg hover:bg-white/10 transition-all duration-300 flex items-center justify-center">
+                <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                </svg>
+                Gửi email
+            </a>
+        </div>
+    </div>
+</section>
+{% endblock %}
