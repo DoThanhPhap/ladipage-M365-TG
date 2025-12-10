@@ -1,13 +1,16 @@
 """
 Views for landing app.
 """
+import os
 from django.shortcuts import render, redirect
 from django.core.mail import send_mail
 from django.conf import settings
 from django.contrib import messages
 
 from .forms import ContactForm
-from .models import ContactSubmission
+
+# Check if running on Vercel
+IS_VERCEL = os.environ.get('VERCEL', False)
 
 
 def index(request):
@@ -17,13 +20,18 @@ def index(request):
         if form.is_valid():
             data = form.cleaned_data
 
-            # Save to database
-            ContactSubmission.objects.create(
-                name=data['name'],
-                phone=data['phone'],
-                service=data['service'],
-                message=data.get('message', ''),
-            )
+            # Save to database only if not on Vercel (serverless has no persistent storage)
+            if not IS_VERCEL:
+                try:
+                    from .models import ContactSubmission
+                    ContactSubmission.objects.create(
+                        name=data['name'],
+                        phone=data['phone'],
+                        service=data['service'],
+                        message=data.get('message', ''),
+                    )
+                except Exception as e:
+                    print(f"Database save error: {e}")
 
             # Prepare email content
             service_display = dict(ContactForm.SERVICE_CHOICES).get(data['service'], data['service'])
@@ -46,7 +54,7 @@ Nội dung: {data.get('message') or 'Không có'}
                     fail_silently=True,
                 )
             except Exception as e:
-                # Log error but don't fail (email is secondary, DB is primary)
+                # Log error but don't fail
                 print(f"Email send error: {e}")
 
             messages.success(request, 'Cảm ơn bạn! Chúng tôi sẽ liên hệ trong 24h.')

@@ -1,33 +1,38 @@
 """
 Admin configuration for landing app.
 """
+import os
 from django.contrib import admin
-from .models import ContactSubmission
 
+# Only register admin if not on Vercel (no database on serverless)
+IS_VERCEL = os.environ.get('VERCEL', False)
 
-@admin.register(ContactSubmission)
-class ContactSubmissionAdmin(admin.ModelAdmin):
-    """Admin interface for contact submissions."""
+if not IS_VERCEL:
+    from .models import ContactSubmission
 
-    list_display = ['name', 'phone', 'service', 'status', 'created_at']
-    list_filter = ['status', 'service', 'created_at']
-    search_fields = ['name', 'phone', 'message']
-    list_editable = ['status']
-    readonly_fields = ['created_at', 'updated_at']
-    ordering = ['-created_at']
+    @admin.register(ContactSubmission)
+    class ContactSubmissionAdmin(admin.ModelAdmin):
+        """Admin interface for contact submissions."""
 
-    fieldsets = (
-        ('Thông tin khách hàng', {
-            'fields': ('name', 'phone', 'service', 'message')
-        }),
-        ('Quản lý', {
-            'fields': ('status', 'notes')
-        }),
-        ('Thời gian', {
-            'fields': ('created_at', 'updated_at'),
-            'classes': ('collapse',)
-        }),
-    )
+        list_display = ['name', 'phone', 'service', 'status', 'created_at']
+        list_filter = ['status', 'service', 'created_at']
+        search_fields = ['name', 'phone', 'message']
+        list_editable = ['status']
+        readonly_fields = ['created_at', 'updated_at']
+        ordering = ['-created_at']
+
+        fieldsets = (
+            ('Thông tin khách hàng', {
+                'fields': ('name', 'phone', 'service', 'message')
+            }),
+            ('Quản lý', {
+                'fields': ('status', 'notes')
+            }),
+            ('Thời gian', {
+                'fields': ('created_at', 'updated_at'),
+                'classes': ('collapse',)
+            }),
+        )
 
 
 # Customize admin site header
