@@ -15,10 +15,10 @@ IS_VERCEL = os.environ.get('VERCEL', False)
 # Security settings from environment
 SECRET_KEY = config('SECRET_KEY', default='dev-secret-key-change-in-production')
 DEBUG = config('DEBUG', default=True, cast=bool)
-ALLOWED_HOSTS = ['*']  # Allow all hosts for development
+ALLOWED_HOSTS = config('ALLOWED_HOSTS', default='*').split(',') if config('ALLOWED_HOSTS', default='') else ['*']
 
 # CSRF trusted origins
-CSRF_TRUSTED_ORIGINS = config('CSRF_TRUSTED_ORIGINS', default='https://*.up.railway.app,https://*.railway.app,https://*.vercel.app,https://*.onrender.com,https://*.cloudnetwork.vn').split(',')
+CSRF_TRUSTED_ORIGINS = config('CSRF_TRUSTED_ORIGINS', default='https://truonggiagp.com,https://www.truonggiagp.com,https://*.cloudnetwork.vn').split(',')
 
 # Application definition
 INSTALLED_APPS = [
