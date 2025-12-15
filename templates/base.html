@@ -79,7 +79,37 @@
 
                 <!-- Desktop Navigation -->
                 <div class="hidden md:flex items-center space-x-8">
-                    <a href="{% url 'landing:index' %}#solutions" class="text-gray-700 hover:text-primary transition-colors duration-200 font-medium">Giải pháp</a>
+                    <!-- Services Dropdown -->
+                    <div class="relative group">
+                        <button class="flex items-center text-gray-700 hover:text-primary transition-colors duration-200 font-medium">
+                            Dịch vụ
+                            <svg class="w-4 h-4 ml-1 transition-transform duration-200 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                            </svg>
+                        </button>
+                        <div class="absolute left-0 top-full pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                            <div class="bg-white rounded-xl shadow-xl border border-gray-200 py-2 min-w-[200px]">
+                                <a href="{% url 'landing:microsoft365' %}" class="flex items-center px-4 py-3 text-gray-700 hover:bg-primary/5 hover:text-primary transition-colors">
+                                    <svg class="w-5 h-5 mr-3 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                                    </svg>
+                                    Microsoft 365
+                                </a>
+                                <a href="{% url 'landing:vanphongao' %}" class="flex items-center px-4 py-3 text-gray-700 hover:bg-primary/5 hover:text-primary transition-colors">
+                                    <svg class="w-5 h-5 mr-3 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+                                    </svg>
+                                    Văn phòng ảo
+                                </a>
+                                <a href="{% url 'landing:chukyso' %}" class="flex items-center px-4 py-3 text-gray-700 hover:bg-primary/5 hover:text-primary transition-colors">
+                                    <svg class="w-5 h-5 mr-3 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                                    </svg>
+                                    Chữ ký số & Kế toán
+                                </a>
+                            </div>
+                        </div>
+                    </div>
                     <a href="{% url 'landing:index' %}#benefits" class="text-gray-700 hover:text-primary transition-colors duration-200 font-medium">Lợi ích</a>
                     <a href="{% url 'landing:index' %}#contact" class="text-gray-700 hover:text-primary transition-colors duration-200 font-medium">Liên hệ</a>
                     <a href="tel:0989222800" class="bg-gradient-to-r from-primary to-primary-dark text-white px-6 py-2.5 rounded-full font-semibold hover:shadow-lg hover:shadow-primary/30 transition-all duration-300 hover:-translate-y-0.5">
@@ -98,7 +128,13 @@
             <!-- Mobile Menu -->
             <div id="mobile-menu" class="hidden md:hidden pb-6">
                 <div class="flex flex-col space-y-4 pt-4 border-t border-gray-200">
-                    <a href="{% url 'landing:index' %}#solutions" class="text-gray-700 hover:text-primary transition-colors py-2">Giải pháp</a>
+                    <!-- Mobile Services Submenu -->
+                    <div class="space-y-2">
+                        <span class="text-gray-500 text-sm font-medium uppercase tracking-wider">Dịch vụ</span>
+                        <a href="{% url 'landing:microsoft365' %}" class="block text-gray-700 hover:text-primary transition-colors py-2 pl-4 border-l-2 border-gray-200 hover:border-primary">Microsoft 365</a>
+                        <a href="{% url 'landing:vanphongao' %}" class="block text-gray-700 hover:text-primary transition-colors py-2 pl-4 border-l-2 border-gray-200 hover:border-primary">Văn phòng ảo</a>
+                        <a href="{% url 'landing:chukyso' %}" class="block text-gray-700 hover:text-primary transition-colors py-2 pl-4 border-l-2 border-gray-200 hover:border-primary">Chữ ký số & Kế toán</a>
+                    </div>
                     <a href="{% url 'landing:index' %}#benefits" class="text-gray-700 hover:text-primary transition-colors py-2">Lợi ích</a>
                     <a href="{% url 'landing:index' %}#contact" class="text-gray-700 hover:text-primary transition-colors py-2">Liên hệ</a>
                     <a href="tel:0989222800" class="bg-gradient-to-r from-primary to-primary-dark text-white px-6 py-3 rounded-full text-center font-semibold">
