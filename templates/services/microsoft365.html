@@ -6,59 +6,44 @@
 {% block content %}
 <!-- Hero Section - Pricing Emphasis -->
 <section class="relative min-h-[50vh] flex items-center overflow-hidden">
-    <div class="absolute inset-0 bg-gradient-to-br from-gray-900 via-black to-gray-900">
-        <div class="absolute inset-0 opacity-30">
-            <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/20 rounded-full blur-3xl animate-pulse"></div>
-            <div class="absolute bottom-1/4 right-1/4 w-80 h-80 bg-primary/10 rounded-full blur-3xl animate-pulse" style="animation-delay: 1s;"></div>
-        </div>
+    <div class="absolute inset-0">
+        <img src="{% static 'images/bg-dvu-ms365.jpg' %}" alt="" class="w-full h-full object-cover">
+        <div class="absolute inset-0 bg-white/20"></div>
     </div>
 
     <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div class="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-                <a href="{% url 'landing:index' %}" class="inline-flex items-center text-gray-400 hover:text-primary transition-colors mb-6">
+            <!-- Left Column - Text Content -->
+            <div class="bg-white/10 backdrop-blur-sm rounded-3xl p-8 lg:p-10">
+                <a href="{% url 'landing:index' %}" class="inline-flex items-center text-gray-700 hover:text-primary transition-colors mb-6">
                     <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
                     </svg>
                     Quay lại trang chủ
                 </a>
 
-                <!-- Discount Badge -->
-                <div class="flex items-center gap-3 mb-4">
-                    <span class="bg-primary text-white text-sm font-bold px-3 py-1 rounded-full animate-pulse">GIẢM 51%</span>
-                    <span class="text-gray-400 line-through text-lg">199.000đ</span>
-                </div>
-
-                <!-- Price Display -->
-                <div class="mb-6">
-                    <span class="text-gray-300 text-lg">Chỉ từ </span>
-                    <span class="text-5xl md:text-6xl font-bold text-white">99.000</span>
-                    <span class="text-gray-400 text-lg">đ/người dùng/tháng</span>
-                </div>
-
-                <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
+                <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
                     Tăng hiệu suất làm việc với
-                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-red-400">Microsoft 365</span>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-red-500">Microsoft 365</span>
                 </h1>
-                <p class="text-lg text-gray-300 mb-8 leading-relaxed">
+                <p class="text-lg text-gray-700 mb-8 leading-relaxed">
                     Bộ công cụ văn phòng đám mây bản quyền, hỗ trợ mọi lúc mọi nơi. Kết nối đội ngũ, bảo mật dữ liệu, nâng cao năng suất.
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4">
                     <a href="#pricing" class="bg-gradient-to-r from-primary to-primary-dark text-white px-8 py-4 rounded-full font-semibold text-center hover:shadow-lg hover:shadow-primary/30 transition-all duration-300 hover:-translate-y-1">
                         Xem các gói dịch vụ
                     </a>
-                    <a href="#contact" class="border border-white/30 text-white px-8 py-4 rounded-full font-semibold text-center hover:bg-white/10 transition-all duration-300">
+                    <a href="#contact" class="border border-gray-700 text-gray-900 px-8 py-4 rounded-full font-semibold text-center hover:bg-white/30 transition-all duration-300">
                         Tư vấn MIỄN PHÍ
                     </a>
                 </div>
             </div>
+            <!-- Right Column - Logo -->
             <div class="hidden lg:flex justify-center">
                 <div class="relative">
-                    <div class="absolute inset-0 bg-gradient-to-r from-primary/30 to-red-400/30 rounded-3xl blur-2xl"></div>
-                    <div class="relative bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-xl rounded-3xl p-8 border border-white/10">
-                        <svg class="w-48 h-48 mx-auto text-primary" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M11.5 2.5V11H3.5V3.5C3.5 2.95 3.95 2.5 4.5 2.5H11.5ZM12.5 2.5H19.5C20.05 2.5 20.5 2.95 20.5 3.5V11H12.5V2.5ZM3.5 12H11.5V20.5H4.5C3.95 20.5 3.5 20.05 3.5 19.5V12ZM12.5 12H20.5V19.5C20.5 20.05 20.05 20.5 19.5 20.5H12.5V12Z"/>
-                        </svg>
+                    <div class="absolute inset-0 bg-gradient-to-r from-white/40 to-white/20 rounded-3xl blur-2xl"></div>
+                    <div class="relative bg-white/80 backdrop-blur-xl rounded-3xl p-8 border border-white/50 shadow-xl">
+                        <img src="{% static 'images/logo-ms365.png' %}" alt="Microsoft 365" class="w-48 h-48 mx-auto object-contain">
                     </div>
                 </div>
             </div>
@@ -78,160 +63,114 @@
             </p>
         </div>
 
-        <!-- Main Pricing Cards - 4 Tiers -->
-        <!-- Giá tham khảo, cần xác nhận với client -->
-        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-            <!-- Microsoft 365 Basic -->
+        <!-- Main Pricing Cards - 3 Tiers -->
+        <div class="grid md:grid-cols-3 gap-6 mb-12">
+            <!-- Microsoft 365 Business Basic -->
             <div class="bg-white rounded-2xl p-6 border border-gray-200 hover:shadow-xl hover:border-primary/30 transition-all duration-300">
-                <h3 class="text-lg font-bold text-gray-900 mb-1">Microsoft 365 Basic</h3>
-                <p class="text-gray-500 text-sm mb-4">Dành cho cá nhân</p>
-                <div class="mb-6">
-                    <span class="text-4xl font-bold text-gray-900">99.000</span>
-                    <span class="text-gray-500">đ/tháng</span>
+                <div class="flex items-center gap-2 mb-2">
+                    <span class="text-gray-500 text-sm">Đánh giá của khách hàng</span>
+                    <div class="flex">
+                        <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-4 h-4 text-gray-300" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                    </div>
                 </div>
-                <ul class="space-y-3 mb-6 text-sm">
-                    <li class="flex items-start text-gray-700">
-                        <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-                        </svg>
-                        Word, Excel, PowerPoint (Web)
-                    </li>
-                    <li class="flex items-start text-gray-700">
-                        <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-                        </svg>
-                        OneDrive 1TB
-                    </li>
-                    <li class="flex items-start text-gray-700">
-                        <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-                        </svg>
-                        Outlook email 50GB
-                    </li>
-                </ul>
-                <a href="#contact" class="block text-center py-3 border-2 border-primary text-primary rounded-lg hover:bg-primary hover:text-white transition-all duration-300 font-semibold">
+                <h3 class="text-xl font-bold text-gray-900 mb-1">Microsoft 365</h3>
+                <h4 class="text-2xl font-bold text-gray-900 mb-3">Business Basic</h4>
+                <p class="text-gray-500 text-sm mb-4">Email và bản web và Office cho nhóm làm việc, linh hoạt</p>
+                <div class="mb-4">
+                    <span class="text-4xl font-bold text-primary">79.000</span>
+                    <span class="text-gray-500 text-sm">đ</span>
+                </div>
+                <p class="text-gray-500 text-sm mb-6">/người dùng/tháng</p>
+                <a href="#contact" class="block text-center py-3 bg-primary text-white rounded-lg hover:bg-primary-dark transition-all duration-300 font-semibold mb-6">
                     Đặt mua ngay
                 </a>
-            </div>
 
-            <!-- Business Basic -->
-            <div class="bg-white rounded-2xl p-6 border border-gray-200 hover:shadow-xl hover:border-primary/30 transition-all duration-300">
-                <h3 class="text-lg font-bold text-gray-900 mb-1">Business Basic</h3>
-                <p class="text-gray-500 text-sm mb-4">Dành cho team nhỏ</p>
-                <div class="mb-6">
-                    <span class="text-4xl font-bold text-gray-900">149.000</span>
-                    <span class="text-gray-500">đ/tháng</span>
-                </div>
-                <ul class="space-y-3 mb-6 text-sm">
-                    <li class="flex items-start text-gray-700">
-                        <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-                        </svg>
-                        Tất cả tính năng Basic
+                <p class="text-gray-700 font-medium text-sm mb-3">Điểm nổi bật của gói:</p>
+                <ul class="space-y-2 text-sm text-gray-600">
+                    <li class="flex items-start">
+                        <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                        <span><strong>1 TB</strong> lưu trữ đám mây cho mỗi người dùng</span>
                     </li>
-                    <li class="flex items-start text-gray-700">
-                        <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-                        </svg>
-                        Desktop apps cài đặt
+                    <li class="flex items-start">
+                        <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                        <span><strong>Email doanh nghiệp</strong> theo tên miền riêng</span>
                     </li>
-                    <li class="flex items-start text-gray-700">
-                        <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-                        </svg>
-                        Microsoft Teams
-                    </li>
-                    <li class="flex items-start text-gray-700">
-                        <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-                        </svg>
-                        SharePoint Online
+                    <li class="flex items-start">
+                        <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                        <span>Họp trực tuyến và cộng tác với <strong>Microsoft Teams</strong></span>
                     </li>
                 </ul>
-                <a href="#contact" class="block text-center py-3 border-2 border-primary text-primary rounded-lg hover:bg-primary hover:text-white transition-all duration-300 font-semibold">
-                    Đặt mua ngay
-                </a>
             </div>
 
-            <!-- Business Standard - Popular -->
+            <!-- Microsoft 365 Business Standard - Popular -->
             <div class="relative bg-gradient-to-br from-primary/5 to-primary/10 rounded-2xl p-6 border-2 border-primary shadow-xl">
                 <div class="absolute -top-3 left-1/2 -translate-x-1/2">
-                    <span class="bg-gradient-to-r from-primary to-primary-dark text-white text-xs font-bold px-3 py-1 rounded-full">PHỔ BIẾN</span>
+                    <span class="bg-gradient-to-r from-primary to-primary-dark text-white text-xs font-bold px-3 py-1 rounded-full">PHỔ BIẾN NHẤT</span>
                 </div>
-                <h3 class="text-lg font-bold text-gray-900 mb-1">Business Standard</h3>
-                <p class="text-gray-500 text-sm mb-4">Dành cho doanh nghiệp</p>
-                <div class="mb-6">
-                    <span class="text-4xl font-bold text-gray-900">299.000</span>
-                    <span class="text-gray-500">đ/tháng</span>
+                <div class="flex items-center gap-2 mb-2">
+                    <span class="text-gray-500 text-sm">Bảng giá</span>
+                    <span class="text-gray-400 text-sm">Tính năng</span>
+                    <span class="text-gray-400 text-sm">Bảng so sánh</span>
                 </div>
-                <ul class="space-y-3 mb-6 text-sm">
-                    <li class="flex items-start text-gray-700">
-                        <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-                        </svg>
-                        Tất cả tính năng Biz Basic
-                    </li>
-                    <li class="flex items-start text-gray-700">
-                        <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-                        </svg>
-                        Desktop apps đầy đủ
-                    </li>
-                    <li class="flex items-start text-gray-700">
-                        <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-                        </svg>
-                        Webinar hosting (300 người)
-                    </li>
-                    <li class="flex items-start text-gray-700">
-                        <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-                        </svg>
-                        Microsoft Bookings
-                    </li>
-                </ul>
-                <a href="#contact" class="block text-center py-3 bg-gradient-to-r from-primary to-primary-dark text-white rounded-lg hover:shadow-lg hover:shadow-primary/30 transition-all duration-300 font-semibold">
+                <h3 class="text-xl font-bold text-gray-900 mb-1">Business Standard</h3>
+                <p class="text-gray-500 text-sm mb-4">Bộ ứng dụng dành cho thiết bị di động và máy tính giúp điều hành doanh nghiệp hiệu quả</p>
+                <div class="mb-4">
+                    <span class="text-4xl font-bold text-primary">265.000</span>
+                    <span class="text-gray-500 text-sm">đ</span>
+                </div>
+                <p class="text-gray-500 text-sm mb-6">/người dùng/tháng</p>
+                <a href="#contact" class="block text-center py-3 bg-gradient-to-r from-primary to-primary-dark text-white rounded-lg hover:shadow-lg hover:shadow-primary/30 transition-all duration-300 font-semibold mb-6">
                     Đặt mua ngay
                 </a>
+
+                <p class="text-gray-700 font-medium text-sm mb-3">Mọi tính năng của gói Basic, cộng thêm:</p>
+                <ul class="space-y-2 text-sm text-gray-600">
+                    <li class="flex items-start">
+                        <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                        <span>Bộ ứng dụng Office đầy đủ cho máy tính (Word, Excel, PowerPoint, Outlook)</span>
+                    </li>
+                    <li class="flex items-start">
+                        <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                        <span>Lên lịch hẹn và quản lý khách hàng với <strong>Microsoft Bookings</strong></span>
+                    </li>
+                    <li class="flex items-start">
+                        <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                        <span>Sáng tạo video chuyên nghiệp với <strong>Microsoft Clipchamp</strong></span>
+                    </li>
+                </ul>
             </div>
 
-            <!-- Business Premium -->
+            <!-- Microsoft 365 Business Premium -->
             <div class="bg-white rounded-2xl p-6 border border-gray-200 hover:shadow-xl hover:border-primary/30 transition-all duration-300">
-                <h3 class="text-lg font-bold text-gray-900 mb-1">Business Premium</h3>
-                <p class="text-gray-500 text-sm mb-4">Doanh nghiệp cần bảo mật</p>
-                <div class="mb-6">
-                    <span class="text-4xl font-bold text-gray-900">449.000</span>
-                    <span class="text-gray-500">đ/tháng</span>
+                <div class="flex items-center gap-2 mb-2">
+                    <span class="text-gray-500 text-sm">Câu hỏi thường gặp</span>
                 </div>
-                <ul class="space-y-3 mb-6 text-sm">
-                    <li class="flex items-start text-gray-700">
-                        <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-                        </svg>
-                        Tất cả tính năng Standard
-                    </li>
-                    <li class="flex items-start text-gray-700">
-                        <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-                        </svg>
-                        Microsoft Defender
-                    </li>
-                    <li class="flex items-start text-gray-700">
-                        <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-                        </svg>
-                        Intune quản lý thiết bị
-                    </li>
-                    <li class="flex items-start text-gray-700">
-                        <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-                        </svg>
-                        DLP & eDiscovery
-                    </li>
-                </ul>
-                <a href="#contact" class="block text-center py-3 border-2 border-primary text-primary rounded-lg hover:bg-primary hover:text-white transition-all duration-300 font-semibold">
+                <h3 class="text-xl font-bold text-gray-900 mb-1">Business Premium</h3>
+                <p class="text-gray-500 text-sm mb-4">Bộ ứng dụng dành cho thiết bị di động và máy tính giúp điều hành doanh nghiệp hiệu quả</p>
+                <div class="mb-4">
+                    <span class="text-4xl font-bold text-primary">585.000</span>
+                    <span class="text-gray-500 text-sm">đ</span>
+                </div>
+                <p class="text-gray-500 text-sm mb-6">/người dùng/tháng</p>
+                <a href="#contact" class="block text-center py-3 bg-primary text-white rounded-lg hover:bg-primary-dark transition-all duration-300 font-semibold mb-6">
                     Đặt mua ngay
                 </a>
+
+                <p class="text-gray-700 font-medium text-sm mb-3">Mọi tính năng của gói Standard, cộng thêm:</p>
+                <ul class="space-y-2 text-sm text-gray-600">
+                    <li class="flex items-start">
+                        <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                        <span>Bảo mật nâng cao giúp chống lại các mối đe dọa tệ vi như lừa đảo và phần mềm độc hại</span>
+                    </li>
+                    <li class="flex items-start">
+                        <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                        <span>Tính năng quản lý thiết bị và dữ liệu giúp kiểm soát truy cập vào thông tin nhạy cảm của công ty</span>
+                    </li>
+                </ul>
             </div>
         </div>
 
@@ -306,32 +245,28 @@
 
         <!-- Scrollable table container -->
         <div class="overflow-x-auto rounded-xl border border-gray-200 shadow-lg">
-            <table class="w-full min-w-[700px]">
+            <table class="w-full min-w-[600px]">
                 <thead>
                     <tr class="bg-gray-50 border-b border-gray-200">
                         <th class="sticky left-0 bg-gray-50 text-left py-4 px-4 font-semibold text-gray-900 w-48">Tính năng</th>
                         <th class="text-center py-4 px-3 font-semibold text-gray-900">
-                            Basic<br><span class="text-primary text-sm font-normal">99k/tháng</span>
-                        </th>
-                        <th class="text-center py-4 px-3 font-semibold text-gray-900">
-                            Biz Basic<br><span class="text-primary text-sm font-normal">149k/tháng</span>
+                            Business Basic<br><span class="text-primary text-sm font-normal">79k/tháng</span>
                         </th>
                         <th class="text-center py-4 px-3 font-semibold text-gray-900 bg-primary/5">
-                            Biz Standard<br><span class="text-primary text-sm font-normal">299k/tháng</span>
+                            Business Standard<br><span class="text-primary text-sm font-normal">265k/tháng</span>
                         </th>
                         <th class="text-center py-4 px-3 font-semibold text-gray-900">
-                            Biz Premium<br><span class="text-primary text-sm font-normal">449k/tháng</span>
+                            Business Premium<br><span class="text-primary text-sm font-normal">585k/tháng</span>
                         </th>
                     </tr>
                 </thead>
                 <tbody>
                     <!-- Office Apps Category -->
                     <tr class="bg-gray-100">
-                        <td colspan="5" class="py-3 px-4 font-bold text-gray-800">Ứng dụng Office</td>
+                        <td colspan="4" class="py-3 px-4 font-bold text-gray-800">Ứng dụng Office</td>
                     </tr>
                     <tr class="border-b border-gray-100 hover:bg-gray-50">
                         <td class="sticky left-0 bg-white py-3 px-4 text-gray-700">Word, Excel, PowerPoint (Web)</td>
-                        <td class="text-center py-3 px-3"><svg class="w-5 h-5 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg></td>
                         <td class="text-center py-3 px-3"><svg class="w-5 h-5 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg></td>
                         <td class="text-center py-3 px-3 bg-primary/5"><svg class="w-5 h-5 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg></td>
                         <td class="text-center py-3 px-3"><svg class="w-5 h-5 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg></td>
@@ -339,13 +274,11 @@
                     <tr class="border-b border-gray-100 hover:bg-gray-50">
                         <td class="sticky left-0 bg-white py-3 px-4 text-gray-700">Desktop apps cài đặt</td>
                         <td class="text-center py-3 px-3"><span class="text-gray-300">—</span></td>
-                        <td class="text-center py-3 px-3"><svg class="w-5 h-5 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg></td>
                         <td class="text-center py-3 px-3 bg-primary/5"><svg class="w-5 h-5 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg></td>
                         <td class="text-center py-3 px-3"><svg class="w-5 h-5 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg></td>
                     </tr>
                     <tr class="border-b border-gray-100 hover:bg-gray-50">
                         <td class="sticky left-0 bg-white py-3 px-4 text-gray-700">Mobile apps</td>
-                        <td class="text-center py-3 px-3"><svg class="w-5 h-5 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg></td>
                         <td class="text-center py-3 px-3"><svg class="w-5 h-5 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg></td>
                         <td class="text-center py-3 px-3 bg-primary/5"><svg class="w-5 h-5 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg></td>
                         <td class="text-center py-3 px-3"><svg class="w-5 h-5 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg></td>
@@ -353,25 +286,22 @@
 
                     <!-- Communication Category -->
                     <tr class="bg-gray-100">
-                        <td colspan="5" class="py-3 px-4 font-bold text-gray-800">Giao tiếp</td>
+                        <td colspan="4" class="py-3 px-4 font-bold text-gray-800">Giao tiếp</td>
                     </tr>
                     <tr class="border-b border-gray-100 hover:bg-gray-50">
                         <td class="sticky left-0 bg-white py-3 px-4 text-gray-700">Outlook email 50GB</td>
-                        <td class="text-center py-3 px-3"><svg class="w-5 h-5 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg></td>
                         <td class="text-center py-3 px-3"><svg class="w-5 h-5 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg></td>
                         <td class="text-center py-3 px-3 bg-primary/5"><svg class="w-5 h-5 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg></td>
                         <td class="text-center py-3 px-3"><svg class="w-5 h-5 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg></td>
                     </tr>
                     <tr class="border-b border-gray-100 hover:bg-gray-50">
                         <td class="sticky left-0 bg-white py-3 px-4 text-gray-700">Microsoft Teams</td>
-                        <td class="text-center py-3 px-3"><span class="text-gray-300">—</span></td>
                         <td class="text-center py-3 px-3"><svg class="w-5 h-5 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg></td>
                         <td class="text-center py-3 px-3 bg-primary/5"><svg class="w-5 h-5 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg></td>
                         <td class="text-center py-3 px-3"><svg class="w-5 h-5 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg></td>
                     </tr>
                     <tr class="border-b border-gray-100 hover:bg-gray-50">
-                        <td class="sticky left-0 bg-white py-3 px-4 text-gray-700">Webinar (300 người)</td>
-                        <td class="text-center py-3 px-3"><span class="text-gray-300">—</span></td>
+                        <td class="sticky left-0 bg-white py-3 px-4 text-gray-700">Microsoft Bookings</td>
                         <td class="text-center py-3 px-3"><span class="text-gray-300">—</span></td>
                         <td class="text-center py-3 px-3 bg-primary/5"><svg class="w-5 h-5 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg></td>
                         <td class="text-center py-3 px-3"><svg class="w-5 h-5 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg></td>
@@ -379,18 +309,16 @@
 
                     <!-- Storage Category -->
                     <tr class="bg-gray-100">
-                        <td colspan="5" class="py-3 px-4 font-bold text-gray-800">Lưu trữ</td>
+                        <td colspan="4" class="py-3 px-4 font-bold text-gray-800">Lưu trữ</td>
                     </tr>
                     <tr class="border-b border-gray-100 hover:bg-gray-50">
                         <td class="sticky left-0 bg-white py-3 px-4 text-gray-700">OneDrive 1TB</td>
-                        <td class="text-center py-3 px-3"><svg class="w-5 h-5 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg></td>
                         <td class="text-center py-3 px-3"><svg class="w-5 h-5 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg></td>
                         <td class="text-center py-3 px-3 bg-primary/5"><svg class="w-5 h-5 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg></td>
                         <td class="text-center py-3 px-3"><svg class="w-5 h-5 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg></td>
                     </tr>
                     <tr class="border-b border-gray-100 hover:bg-gray-50">
                         <td class="sticky left-0 bg-white py-3 px-4 text-gray-700">SharePoint Online</td>
-                        <td class="text-center py-3 px-3"><span class="text-gray-300">—</span></td>
                         <td class="text-center py-3 px-3"><svg class="w-5 h-5 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg></td>
                         <td class="text-center py-3 px-3 bg-primary/5"><svg class="w-5 h-5 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg></td>
                         <td class="text-center py-3 px-3"><svg class="w-5 h-5 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg></td>
@@ -398,11 +326,10 @@
 
                     <!-- Security Category -->
                     <tr class="bg-gray-100">
-                        <td colspan="5" class="py-3 px-4 font-bold text-gray-800">Bảo mật</td>
+                        <td colspan="4" class="py-3 px-4 font-bold text-gray-800">Bảo mật</td>
                     </tr>
                     <tr class="border-b border-gray-100 hover:bg-gray-50">
                         <td class="sticky left-0 bg-white py-3 px-4 text-gray-700">Xác thực đa yếu tố (MFA)</td>
-                        <td class="text-center py-3 px-3"><svg class="w-5 h-5 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg></td>
                         <td class="text-center py-3 px-3"><svg class="w-5 h-5 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg></td>
                         <td class="text-center py-3 px-3 bg-primary/5"><svg class="w-5 h-5 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg></td>
                         <td class="text-center py-3 px-3"><svg class="w-5 h-5 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg></td>
@@ -410,13 +337,11 @@
                     <tr class="border-b border-gray-100 hover:bg-gray-50">
                         <td class="sticky left-0 bg-white py-3 px-4 text-gray-700">Microsoft Defender</td>
                         <td class="text-center py-3 px-3"><span class="text-gray-300">—</span></td>
-                        <td class="text-center py-3 px-3"><span class="text-gray-300">—</span></td>
                         <td class="text-center py-3 px-3 bg-primary/5"><span class="text-gray-300">—</span></td>
                         <td class="text-center py-3 px-3"><svg class="w-5 h-5 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg></td>
                     </tr>
                     <tr class="border-b border-gray-100 hover:bg-gray-50">
                         <td class="sticky left-0 bg-white py-3 px-4 text-gray-700">Intune quản lý thiết bị</td>
-                        <td class="text-center py-3 px-3"><span class="text-gray-300">—</span></td>
                         <td class="text-center py-3 px-3"><span class="text-gray-300">—</span></td>
                         <td class="text-center py-3 px-3 bg-primary/5"><span class="text-gray-300">—</span></td>
                         <td class="text-center py-3 px-3"><svg class="w-5 h-5 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg></td>
@@ -425,9 +350,6 @@
                 <tfoot>
                     <tr class="bg-gray-50">
                         <td class="sticky left-0 bg-gray-50 py-4 px-4"></td>
-                        <td class="text-center py-4 px-3">
-                            <a href="#contact" class="inline-block py-2 px-4 border border-primary text-primary rounded-lg text-sm hover:bg-primary hover:text-white transition-all">Chọn gói</a>
-                        </td>
                         <td class="text-center py-4 px-3">
                             <a href="#contact" class="inline-block py-2 px-4 border border-primary text-primary rounded-lg text-sm hover:bg-primary hover:text-white transition-all">Chọn gói</a>
                         </td>

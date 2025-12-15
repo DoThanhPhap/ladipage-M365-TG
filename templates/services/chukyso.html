@@ -4,19 +4,18 @@
 {% block title %}Chữ Ký Số & Kế Toán - Tự Động Hoá Trương Gia{% endblock %}
 
 {% block content %}
-<!-- Hero Section - Dark -->
+<!-- Hero Section - Background Image -->
 <section class="relative min-h-[60vh] flex items-center overflow-hidden">
-    <div class="absolute inset-0 bg-gradient-to-br from-gray-900 via-black to-gray-900">
-        <div class="absolute inset-0 opacity-30">
-            <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/20 rounded-full blur-3xl animate-pulse"></div>
-            <div class="absolute bottom-1/4 right-1/4 w-80 h-80 bg-primary/10 rounded-full blur-3xl animate-pulse" style="animation-delay: 1s;"></div>
-        </div>
+    <div class="absolute inset-0">
+        <img src="{% static 'images/bg-chukyso.jpg' %}" alt="" class="w-full h-full object-cover">
+        <div class="absolute inset-0 bg-black/40"></div>
     </div>
 
     <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <div class="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-                <a href="{% url 'landing:index' %}" class="inline-flex items-center text-gray-400 hover:text-primary transition-colors mb-6">
+            <!-- Left Column - Text Content -->
+            <div class="bg-black/10 backdrop-blur-sm rounded-3xl p-8 lg:p-10">
+                <a href="{% url 'landing:index' %}" class="inline-flex items-center text-gray-200 hover:text-primary transition-colors mb-6">
                     <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
                     </svg>
@@ -25,29 +24,20 @@
                 <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
                     Chữ Ký Số & <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-red-400">Kế Toán</span>
                 </h1>
-                <p class="text-xl text-gray-300 mb-8 leading-relaxed">
+                <p class="text-xl text-gray-200 mb-8 leading-relaxed">
                     Bộ công cụ pháp lý số "All-in-one" giúp đơn giản hóa nghiệp vụ kế toán và kê khai thuế. Chữ ký số, hoá đơn điện tử, phần mềm kế toán - tất cả trong một giải pháp.
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4">
                     <a href="#contact" class="bg-gradient-to-r from-primary to-primary-dark text-white px-8 py-4 rounded-full font-semibold text-center hover:shadow-lg hover:shadow-primary/30 transition-all duration-300 hover:-translate-y-1">
                         Đăng ký ngay
                     </a>
-                    <a href="tel:0989222800" class="border border-white/20 text-white px-8 py-4 rounded-full font-semibold text-center hover:bg-white/10 transition-all duration-300">
+                    <a href="tel:0989222800" class="border border-white/30 text-white px-8 py-4 rounded-full font-semibold text-center hover:bg-white/10 transition-all duration-300">
                         Gọi tư vấn: 0989 222 800
                     </a>
                 </div>
             </div>
-            <div class="hidden lg:flex justify-center">
-                <div class="relative">
-                    <div class="absolute inset-0 bg-gradient-to-r from-primary/30 to-red-400/30 rounded-3xl blur-2xl"></div>
-                    <div class="relative bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-xl rounded-3xl p-8 border border-white/10">
-                        <svg class="w-48 h-48 mx-auto text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 2v5a2 2 0 002 2h5"/>
-                        </svg>
-                    </div>
-                </div>
-            </div>
+            <!-- Right Column - Empty -->
+            <div class="hidden lg:block"></div>
         </div>
     </div>
 </section>
