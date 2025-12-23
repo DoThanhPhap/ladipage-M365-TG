@@ -3,32 +3,67 @@
 
 {% block content %}
 
-<!-- HERO SECTION - Background Image -->
-<section id="hero" class="relative min-h-screen flex items-center overflow-hidden">
-    <!-- Background Image -->
-    <div class="absolute inset-0">
-        <img src="{% static 'images/hp-ms365.jpg' %}" alt="" class="w-full h-full object-cover">
-        <div class="absolute inset-0 bg-black/40"></div>
+<!-- HERO SECTION - Animated Squares Background -->
+<section id="hero" class="relative min-h-screen flex items-center overflow-hidden bg-white">
+    <!-- Animated Squares Background - Right Side -->
+    <div class="absolute inset-0 pointer-events-none">
+        <!-- Large squares -->
+        <div class="absolute top-10 right-10 w-40 h-40 border-4 border-primary/30 bg-primary/10 rotate-12 animate-float-slow"></div>
+        <div class="absolute top-32 right-48 w-32 h-32 border-4 border-primary bg-primary/20 -rotate-6 animate-float-medium"></div>
+        <div class="absolute top-20 right-80 w-24 h-24 border-4 border-primary/40 bg-primary/15 rotate-45 animate-float-fast"></div>
+
+        <!-- Medium squares -->
+        <div class="absolute top-56 right-20 w-28 h-28 border-4 border-primary/60 bg-primary/25 rotate-12 animate-float-medium"></div>
+        <div class="absolute top-72 right-60 w-20 h-20 border-4 border-primary bg-primary/30 -rotate-12 animate-float-slow"></div>
+        <div class="absolute top-48 right-96 w-16 h-16 border-4 border-primary/50 bg-primary/20 rotate-6 animate-float-fast"></div>
+
+        <!-- Small squares -->
+        <div class="absolute bottom-40 right-32 w-24 h-24 border-4 border-primary/70 bg-primary/25 -rotate-6 animate-float-fast"></div>
+        <div class="absolute bottom-20 right-64 w-20 h-20 border-4 border-primary/40 bg-primary/15 rotate-12 animate-float-medium"></div>
+        <div class="absolute bottom-60 right-16 w-16 h-16 border-4 border-primary bg-primary/35 rotate-45 animate-float-slow"></div>
+        <div class="absolute bottom-32 right-96 w-12 h-12 border-4 border-primary/60 bg-primary/20 -rotate-12 animate-float-fast"></div>
+
+        <!-- Extra decorative squares -->
+        <div class="absolute top-40 right-[30rem] w-14 h-14 border-4 border-primary/30 bg-primary/10 rotate-12 animate-float-slow"></div>
+        <div class="absolute bottom-48 right-[28rem] w-18 h-18 border-4 border-primary/50 bg-primary/15 -rotate-6 animate-float-medium"></div>
     </div>
+
+    <style>
+        @keyframes float-slow {
+            0%, 100% { transform: translateY(0) rotate(12deg); }
+            50% { transform: translateY(-20px) rotate(18deg); }
+        }
+        @keyframes float-medium {
+            0%, 100% { transform: translateY(0) rotate(-6deg); }
+            50% { transform: translateY(-15px) rotate(-12deg); }
+        }
+        @keyframes float-fast {
+            0%, 100% { transform: translateY(0) rotate(45deg); }
+            50% { transform: translateY(-10px) rotate(50deg); }
+        }
+        .animate-float-slow { animation: float-slow 6s ease-in-out infinite; }
+        .animate-float-medium { animation: float-medium 4s ease-in-out infinite; }
+        .animate-float-fast { animation: float-fast 3s ease-in-out infinite; }
+    </style>
 
     <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <div class="grid grid-cols-1 lg:grid-cols-5 gap-12 items-center">
             <!-- Left Column - Text Content (3/5 width) -->
             <div class="lg:col-span-3 text-center lg:text-left" data-animate>
-                <div class="bg-white/60 backdrop-blur-sm rounded-3xl p-8 lg:p-10">
+                <div class="p-8 lg:p-10">
                     <div class="inline-block mb-6">
-                        <span class="text-gray-900 font-medium tracking-widest uppercase text-sm border border-gray-300 px-4 py-2 rounded-full bg-white/50">
+                        <span class="text-primary font-medium tracking-widest uppercase text-sm border border-primary/30 px-4 py-2 rounded-full bg-primary/5">
                             Giải pháp doanh nghiệp
                         </span>
                     </div>
-                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-snug mb-8 text-white drop-shadow-[0_0_10px_rgba(220,38,38,0.3)]" style="text-shadow: 0 0 20px rgba(220,38,38,0.3), 0 0 40px rgba(220,38,38,0.2);">
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-snug mb-8 text-gray-900">
                         Giải pháp
                         <span class="block bg-gradient-to-r from-primary via-red-500 to-primary bg-clip-text text-transparent py-1">
                             toàn diện
                         </span>
                         cho doanh nghiệp
                     </h1>
-                    <p class="text-xl md:text-2xl text-gray-900 mb-10 leading-relaxed">
+                    <p class="text-xl md:text-2xl text-gray-600 mb-10 leading-relaxed">
                         Đồng hành cùng doanh nghiệp Việt Nam trong hành trình chuyển đổi số
                     </p>
                     <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
@@ -36,7 +71,7 @@
                             <span class="relative z-10">Liên hệ tư vấn</span>
                             <div class="absolute inset-0 bg-gradient-to-r from-red-500 to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                         </a>
-                        <a href="tel:0989222800" class="group border-2 border-white/30 hover:border-primary/50 text-white px-10 py-4 rounded-full font-semibold text-lg transition-all duration-300 hover:bg-white/10 flex items-center justify-center gap-3">
+                        <a href="tel:0989222800" class="group border-2 border-gray-300 hover:border-primary text-gray-700 px-10 py-4 rounded-full font-semibold text-lg transition-all duration-300 hover:bg-primary/5 flex items-center justify-center gap-3">
                             <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
                             </svg>
@@ -52,7 +87,7 @@
 
     <!-- Scroll Indicator -->
     <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <svg class="w-6 h-6 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
         </svg>
     </div>
